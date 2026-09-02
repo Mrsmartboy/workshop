@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #0d1033;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #304ffe;
+  color: #ffffff;
+}
+
+/* Custom background circular ovals for Hero & Sections */
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-blob-hero-left {
+  width: 560px;
+  height: 560px;
+  left: -200px;
+  top: -60px;
+  background: radial-gradient(circle at 50% 50%, rgba(220, 226, 255, 0.85) 0%, rgba(235, 240, 255, 0.5) 55%, rgba(245, 247, 255, 0.1) 68%, transparent 70%);
+}
+
+.glow-blob-hero-top {
+  width: 400px;
+  height: 400px;
+  right: -50px;
+  top: -60px;
+  background: radial-gradient(circle at 50% 50%, rgba(224, 229, 255, 0.9) 0%, rgba(240, 244, 255, 0.5) 55%, rgba(255, 255, 255, 0.1) 68%, transparent 70%);
+}
+
+.glow-blob-hero-center {
+  width: 460px;
+  height: 460px;
+  right: 22%;
+  top: 10%;
+  background: radial-gradient(circle at 50% 50%, rgba(228, 233, 255, 0.75) 0%, rgba(245, 247, 255, 0.35) 55%, rgba(255, 255, 255, 0.08) 68%, transparent 70%);
+}
+
+.glow-blob-hero-bottom {
+  width: 420px;
+  height: 420px;
+  left: 12%;
+  bottom: -160px;
+  background: radial-gradient(circle at 50% 50%, rgba(224, 229, 255, 0.8) 0%, rgba(243, 246, 255, 0.4) 55%, rgba(255, 255, 255, 0.08) 68%, transparent 70%);
+}
+
+.glow-blob-about-left {
+  width: 440px;
+  height: 440px;
+  left: -140px;
+  top: 10%;
+  background: radial-gradient(circle at 50% 50%, rgba(225, 230, 255, 0.85) 0%, rgba(243, 246, 255, 0.4) 55%, rgba(255, 255, 255, 0.08) 68%, transparent 70%);
+}
+
+/* Subtle wave divider at the bottom of hero */
+.hero-bottom-curve {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-bottom-curve svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+/* Custom interactive animations */
+.course-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(13, 16, 51, 0.09);
+}
+
+.btn-primary {
+  background-color: #304ffe;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #243fd6;
+  box-shadow: 0 8px 20px rgba(48, 79, 254, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1.5px solid #304ffe;
+  color: #304ffe;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: #f0f3ff;
+  transform: translateY(-1px);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* Testimonial & CTA Banner Background and Translucent Ovals */
+.testimonial-bg {
+  background: #304ffe;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.blue-banner-oval {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 1. Large left circle behind text */
+.blue-banner-oval-left {
+  width: 580px;
+  height: 580px;
+  left: -130px;
+  top: -80px;
+  background: radial-gradient(circle at 48% 48%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.04) 68%, transparent 70%);
+}
+
+/* 2. Bottom-center circle under text and between columns */
+.blue-banner-oval-bottom {
+  width: 440px;
+  height: 440px;
+  left: 26%;
+  bottom: -180px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.13) 52%, rgba(255, 255, 255, 0.03) 68%, transparent 70%);
+}
+
+/* 3. Large right circle surrounding right content */
+.blue-banner-oval-right {
+  width: 660px;
+  height: 660px;
+  right: -130px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(circle at 48% 48%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.14) 52%, rgba(255, 255, 255, 0.03) 68%, transparent 70%);
+}
+
+/* 4. Top-right subtle accent oval */
+.blue-banner-oval-top {
+  width: 320px;
+  height: 320px;
+  right: 32%;
+  top: -120px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.07) 55%, transparent 70%);
+}
+
+/* Bottom-to-Top Floating Motion for Layered Elements */
+@keyframes floatBottomToTop1 {
+  0% {
+    transform: translateY(18px);
+  }
+  50% {
+    transform: translateY(-24px);
+  }
+  100% {
+    transform: translateY(18px);
+  }
+}
+
+@keyframes floatBottomToTop2 {
+  0% {
+    transform: translateY(22px);
+  }
+  50% {
+    transform: translateY(-28px);
+  }
+  100% {
+    transform: translateY(22px);
+  }
+}
+
+@keyframes floatBottomToTop3 {
+  0% {
+    transform: translateY(16px);
+  }
+  50% {
+    transform: translateY(-22px);
+  }
+  100% {
+    transform: translateY(16px);
+  }
+}
+
+@keyframes floatBottomToTopBase {
+  0% {
+    transform: translateY(8px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float-base {
+  animation: floatBottomToTopBase 5.5s ease-in-out infinite;
+}
+
+.animate-float-1 {
+  animation: floatBottomToTop1 4.2s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatBottomToTop2 4.8s ease-in-out infinite 0.4s;
+}
+
+.animate-float-3 {
+  animation: floatBottomToTop3 3.9s ease-in-out infinite 0.8s;
+}
