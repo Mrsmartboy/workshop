@@ -605,6 +605,7 @@ export default function AcademyPage() {
                       muted
                       loop
                       playsInline
+                      style={{ objectPosition: "center 18%" }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   )}
