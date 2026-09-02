@@ -6,10 +6,7 @@ export const metadata: Metadata = {
   description:
     "Presenting Codegnan, the tech school of the future. We teach you the right skills to be prepared for tomorrow.",
   icons: {
-    icon: [
-      { url: "/codegnan_logo.webp", type: "image/webp" },
-      { url: "/favicon.ico" },
-    ],
+    icon: "/codegnan_logo.webp",
     shortcut: "/codegnan_logo.webp",
     apple: "/codegnan_logo.webp",
   },

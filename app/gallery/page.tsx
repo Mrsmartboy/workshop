@@ -234,6 +234,18 @@ const GALLERY_ITEMS: GalleryItem[] = [
     description:
       "Flagship workshop exploring neural architectures, AI-augmented pair programming, autonomous coding agents, and real-time execution pipelines.",
   },
+  {
+    id: "official-workshop-certificate",
+    type: "image",
+    src: "/gallery/workshop_certificate.png",
+    alt: "Official Codegnan Certificate of Participation in Artificial Intelligence & Autonomous Agents",
+    title: "Official Verified Workshop Certificate",
+    category: "Workshops",
+    tag: "Verified Credential",
+    date: "July 2026",
+    description:
+      "Official certificate of completion awarded for successful architecture, hands-on engineering, and cloud deployment of production AI & Autonomous Agent systems.",
+  },
 ];
 
 const CATEGORIES = ["All Media", "Workshops", "Videos", "Hackathons", "Bootcamps"] as const;

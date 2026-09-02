@@ -19,6 +19,10 @@ import {
   Calendar,
   Clock,
   MapPin,
+  ShieldCheck,
+  FileCode,
+  QrCode,
+  Briefcase,
 } from "lucide-react";
 
 // Types
@@ -879,7 +883,174 @@ export default function AcademyPage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 8. GROW YOUR CAREER CTA BANNER SECTION (NEW REFERENCE) */}
+      {/* 8. ULTRA-ATTRACTIVE VERIFIED CERTIFICATE & CREDENTIALS SECTION */}
+      {/* ========================================================= */}
+      <section id="certification" className="relative bg-gradient-to-b from-[#f8faff] via-white to-[#f4f7ff] py-24 sm:py-32 border-y border-[#eaedf6] overflow-hidden">
+        {/* Soft Radial Ambient Halos */}
+        <div className="absolute top-1/4 left-1/10 w-[500px] h-[500px] bg-[#304ffe]/10 rounded-full filter blur-[120px] pointer-events-none -z-10" />
+        <div className="absolute bottom-1/4 right-1/10 w-[450px] h-[450px] bg-[#e67700]/10 rounded-full filter blur-[120px] pointer-events-none -z-10" />
+
+        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Column: 3D Perspective Certificate Mockup with Floating Badges */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-start">
+              <div className="relative w-full max-w-[560px] group select-none">
+                {/* Multi-layered ambient backlight aura */}
+                <div className="absolute -inset-6 bg-gradient-to-tr from-[#304ffe]/25 via-[#ff922b]/20 to-[#304ffe]/15 rounded-[36px] filter blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+
+                {/* Main Framed Certificate Container with 3D Hover Effect */}
+                <div className="relative rounded-[24px] overflow-hidden bg-white p-3 sm:p-4 border-2 border-white shadow-[0_25px_60px_rgba(20,24,68,0.14),0_10px_20px_rgba(48,79,254,0.08)] transition-all duration-500 group-hover:shadow-[0_35px_80px_rgba(20,24,68,0.2),0_15px_30px_rgba(48,79,254,0.15)] group-hover:-translate-y-1.5">
+                  <div className="rounded-[18px] overflow-hidden border border-[#eaedf6] bg-white relative">
+                    <img
+                      src="/gallery/workshop_certificate.png"
+                      alt="Official Codegnan Certificate of Participation in Artificial Intelligence & Autonomous Agents"
+                      className="w-full h-auto object-contain block"
+                      loading="lazy"
+                    />
+
+                    {/* Subtle top-light gradient sheen */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  </div>
+                </div>
+
+                {/* Floating Glass Badge 1: Top-Right Verified QR */}
+                <div className="absolute -top-4 -right-3 sm:-right-5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-[0_12px_30px_rgba(13,16,51,0.12)] border border-white/80 flex items-center gap-3 animate-float-base hidden sm:flex">
+                  <div className="w-8 h-8 rounded-xl bg-[#e6fcf5] text-[#0ca678] flex items-center justify-center font-bold shadow-sm">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] font-extrabold uppercase tracking-widest text-[#0ca678]">
+                      Authentic Credential
+                    </span>
+                    <span className="text-[12px] font-bold text-[#0d1033]">
+                      Scan to Verify Online
+                    </span>
+                  </div>
+                </div>
+
+                {/* Floating Glass Badge 2: Bottom-Left Certified Title */}
+                <div className="absolute -bottom-5 -left-3 sm:-left-5 bg-[#0d1033]/95 backdrop-blur-md text-white px-4 py-3 rounded-2xl shadow-[0_16px_35px_rgba(13,16,51,0.25)] border border-white/15 flex items-center gap-3 animate-float-base hidden sm:flex">
+                  <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#304ffe] to-[#536dfe] text-white flex items-center justify-center font-bold shadow-md">
+                    <Award className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] font-extrabold uppercase tracking-wider text-[#9fa8da]">
+                      Certified Achievement
+                    </span>
+                    <span className="text-[12px] font-bold text-white">
+                      AI &amp; Autonomous Agents
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Premium Feature Cards & Clear Value */}
+            <div className="lg:col-span-6 max-w-[560px]">
+              {/* Badge Tag */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#f0f3ff] border border-[#dce4ff] text-[#304ffe] text-[11px] font-bold uppercase tracking-wider rounded-full mb-4 shadow-sm">
+                <Sparkles className="w-3.5 h-3.5" />
+                Industry-Recognized Certification
+              </div>
+
+              <h2 className="text-[34px] sm:text-[42px] font-black tracking-[-0.035em] text-[#0d1033] leading-[1.15]">
+                Proof of Real Skills,
+                <br />
+                <span className="text-[#304ffe]">Not Just Attendance.</span>
+              </h2>
+
+              <p className="mt-4 text-[15px] sm:text-[16px] text-[#606482] leading-relaxed">
+                Earn an official, verifiable Certificate of Participation from Codegnan IT Solutions. Every program pairs hands-on code development with verified credentials ready for LinkedIn and employer resumes.
+              </p>
+
+              {/* 3 Interactive Feature Glass Cards */}
+              <div className="mt-8 space-y-4">
+                {/* Feature 1 */}
+                <div className="group/item flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-[#eaedf6] shadow-[0_6px_20px_rgba(20,24,68,0.04)] hover:shadow-[0_12px_30px_rgba(48,79,254,0.09)] hover:border-[#304ffe]/30 transition-all duration-300">
+                  <div className="w-11 h-11 rounded-xl bg-[#eef2ff] text-[#304ffe] flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
+                    <ShieldCheck className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="text-[15px] font-bold text-[#0d1033] group-hover/item:text-[#304ffe] transition-colors">
+                        Digitally Verifiable Credential ID &amp; QR
+                      </h4>
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-[#eef2ff] text-[#304ffe] rounded-md shrink-0">
+                        1-Click Verify
+                      </span>
+                    </div>
+                    <p className="text-[13px] text-[#606482] mt-1 leading-relaxed">
+                      Unique credential ID (<code className="font-mono text-[11px] bg-[#f0f2f8] px-1 py-0.5 rounded text-[#0d1033]">CG-AI-2026-94812</code>) verifiable instantly by hiring managers and linked to your LinkedIn profile.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature 2 */}
+                <div className="group/item flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-[#eaedf6] shadow-[0_6px_20px_rgba(20,24,68,0.04)] hover:shadow-[0_12px_30px_rgba(230,119,0,0.09)] hover:border-[#e67700]/30 transition-all duration-300">
+                  <div className="w-11 h-11 rounded-xl bg-[#fff4e6] text-[#e67700] flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
+                    <FileCode className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="text-[15px] font-bold text-[#0d1033] group-hover/item:text-[#e67700] transition-colors">
+                        Production-Grade GitHub Repository
+                      </h4>
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-[#fff4e6] text-[#e67700] rounded-md shrink-0">
+                        Live Code
+                      </span>
+                    </div>
+                    <p className="text-[13px] text-[#606482] mt-1 leading-relaxed">
+                      Deploy working software with clean commits, structured README documentation, and Swagger API endpoints to showcase during interviews.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature 3 */}
+                <div className="group/item flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-[#eaedf6] shadow-[0_6px_20px_rgba(20,24,68,0.04)] hover:shadow-[0_12px_30px_rgba(12,166,120,0.09)] hover:border-[#0ca678]/30 transition-all duration-300">
+                  <div className="w-11 h-11 rounded-xl bg-[#e6fcf5] text-[#0ca678] flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
+                    <Briefcase className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="text-[15px] font-bold text-[#0d1033] group-hover/item:text-[#0ca678] transition-colors">
+                        Direct Access to 850+ Hiring Partners
+                      </h4>
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-[#e6fcf5] text-[#0ca678] rounded-md shrink-0">
+                        Placement Edge
+                      </span>
+                    </div>
+                    <p className="text-[13px] text-[#606482] mt-1 leading-relaxed">
+                      Top performers receive direct interview recommendations for developer and AI engineering roles across Codegnan&apos;s enterprise network.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons Row */}
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("courses")}
+                  className="px-8 py-3.5 bg-[#304ffe] hover:bg-[#253bdf] text-white text-[12px] font-bold uppercase tracking-[0.08em] rounded-[6px] shadow-[0_8px_20px_rgba(48,79,254,0.28)] transition-all hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  EXPLORE CERTIFICATION PROGRAMS
+                </button>
+
+                <a
+                  href="/gallery"
+                  className="px-7 py-3.5 bg-transparent hover:bg-[#f0f3ff] border border-[#304ffe] text-[#304ffe] text-[12px] font-bold uppercase tracking-[0.08em] rounded-[6px] transition-all hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-2"
+                >
+                  <span>VIEW MEDIA GALLERY</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================= */}
+      {/* 9. GROW YOUR CAREER CTA BANNER SECTION (NEW REFERENCE) */}
       {/* ========================================================= */}
       <section className="testimonial-bg py-16 sm:py-24 text-white relative overflow-hidden">
         {/* Background Translucent Ovals matching reference screenshot */}
