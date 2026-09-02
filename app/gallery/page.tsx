@@ -536,7 +536,14 @@ export default function GalleryPage() {
                           autoPlay
                           playsInline
                           style={{
-                            objectPosition: item.id === "voice-chatbot-video" ? "center 18%" : "center",
+                            objectPosition:
+                              item.id === "voice-chatbot-video"
+                                ? "center 18%"
+                                : item.id === "n8n-workshop-video"
+                                ? "center 20%"
+                                : item.id === "uiux-workshop-video"
+                                ? "center 20%"
+                                : "center",
                           }}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
