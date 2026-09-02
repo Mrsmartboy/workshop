@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ShoppingBag,
   ChevronDown,
@@ -399,20 +399,11 @@ export default function AcademyPage() {
                 project-based learning.
               </p>
 
-              {/* Quick stats */}
-              <div className="mt-7 flex items-center gap-6 text-[13px] text-[#606482]">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-[#304ffe]" />
-                  <span><strong className="text-[#0d1033] font-semibold">150+</strong> Workshops</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-[#e67700]" />
-                  <span><strong className="text-[#0d1033] font-semibold">80+</strong> Hackathons</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-[#0ca678]" />
-                  <span><strong className="text-[#0d1033] font-semibold">120+</strong> Bootcamps</span>
-                </div>
+              {/* Big Animated Stats Strip (Matching Reference Screenshot & Incremental Count-up) */}
+              <div className="mt-8 pt-6 border-t border-[#eaedf6] grid grid-cols-3 gap-3 sm:gap-6 max-w-[480px]">
+                <AnimatedCounterItem end={150} label="Workshops" />
+                <AnimatedCounterItem end={80} label="Hackathons" />
+                <AnimatedCounterItem end={120} label="Bootcamps" />
               </div>
 
               {/* Action Buttons */}
@@ -1854,6 +1845,54 @@ function LevelSignal({ level }: { level: "Beginner" | "Intermediate" | "Advanced
           bars >= 3 ? "bg-[#304ffe]" : "bg-[#d9dcf0]"
         }`}
       />
+    </div>
+  );
+}
+
+/**
+ * Animated Incremental Counter Item (Matching Reference Screenshot)
+ */
+function AnimatedCounterItem({
+  end,
+  suffix = "+",
+  label,
+}: {
+  end: number;
+  suffix?: string;
+  label: string;
+}) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTimestamp: number | null = null;
+    const duration = 1600; // ms
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      // Smooth ease-out cubic
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOut * end));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setCount(end);
+      }
+    };
+
+    const animId = window.requestAnimationFrame(step);
+    return () => window.cancelAnimationFrame(animId);
+  }, [end]);
+
+  return (
+    <div className="flex flex-col">
+      <div className="text-[32px] sm:text-[40px] lg:text-[44px] font-black text-[#0d1033] tracking-tight leading-none">
+        {count}
+        <span className="text-[#304ffe] font-bold">{suffix}</span>
+      </div>
+      <div className="mt-2 text-[13px] sm:text-[14px] font-semibold text-[#606482]">
+        {label}
+      </div>
     </div>
   );
 }
