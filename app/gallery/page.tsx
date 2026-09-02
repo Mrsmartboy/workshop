@@ -535,6 +535,9 @@ export default function GalleryPage() {
                           loop
                           autoPlay
                           playsInline
+                          style={{
+                            objectPosition: item.id === "voice-chatbot-video" ? "center 18%" : "center",
+                          }}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         {/* Video Play Overlay */}
