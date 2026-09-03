@@ -49,8 +49,7 @@ export const UPCOMING_EVENTS: EventItem[] = [
     time: "10:00 am",
     venueLine1: "College Campus Auditorium",
     venueLine2: "Live On-Campus Lab",
-    imageUrl:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85",
+    imageUrl: "/gallery/powerbi.png",
     imageAlt: "Data analytics dashboard with AI-powered charts and insights",
   },
   {
@@ -381,8 +380,7 @@ export const MENTORS: Mentor[] = [
     organization: "Codegnan IT Solutions",
     experience: "10+ Yrs in AI Systems & EdTech",
     category: "AI & ML",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    avatarUrl: "/gallery/sandeep_backendengineer.png",
     bio: "Pioneered hands-on engineering cohorts for over 50,000+ college developers. Specializes in large-scale distributed architectures and enterprise GenAI model deployments.",
     expertise: [
       "Generative AI & LLMs",
@@ -406,8 +404,7 @@ export const MENTORS: Mentor[] = [
     organization: "AI Computer Vision Lab",
     experience: "7+ Yrs Research & Production AI",
     category: "AI & ML",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+    avatarUrl: "/gallery/pranathi_ai_engineer.png",
     bio: "Specializes in multimodal computer vision architectures, PyTorch pipelines, real-time object detection models, and high-throughput inference acceleration on edge devices.",
     expertise: [
       "Computer Vision & OpenCV",
@@ -431,8 +428,7 @@ export const MENTORS: Mentor[] = [
     organization: "Enterprise Cloud Specialist",
     experience: "8+ Yrs Full-Stack Engineering",
     category: "Full-Stack & Cloud",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+    avatarUrl: "/gallery/joseph_mernstackdeveloper.png",
     bio: "Passionate about high-concurrency cloud backends, microservices design, modern React/Next.js platforms, container orchestration with Kubernetes, and zero-downtime CI/CD.",
     expertise: [
       "Next.js & React 19",
@@ -456,8 +452,7 @@ export const MENTORS: Mentor[] = [
     organization: "Machine Intelligence Research",
     experience: "12+ Yrs AI Research & Data Science",
     category: "System Architecture",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80",
+    avatarUrl: "/gallery/datta_backendengineer.png",
     bio: "Focuses on agentic multi-agent orchestration, autonomous tool calling, LangGraph workflows, vector retrieval indexing, and production ML pipelines.",
     expertise: [
       "Autonomous Agent Loops",
