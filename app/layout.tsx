@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Codegnan — Grow your skills, define your future.",
+  title: "Codegnan Labs — Campus Innovation & Technology Experiences",
   description:
-    "Presenting Codegnan, the tech school of the future. We teach you the right skills to be prepared for tomorrow.",
+    "We bring industry learning to your campus. Hands-on Workshops, Bootcamps, and Hackathons for colleges and students.",
   icons: {
     icon: "/codegnan_logo.webp",
     shortcut: "/codegnan_logo.webp",

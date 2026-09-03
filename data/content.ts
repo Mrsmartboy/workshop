@@ -1,0 +1,385 @@
+import { Course, TechTrack, CollegeMatrixItem, HowItWorksStep, Mentor, FAQItem, EventItem } from "@/types";
+
+export const THREE_EXPERIENCES: Course[] = [
+  {
+    id: "workshops",
+    title: "Hands-on Workshops",
+    subtitle: "Explore something new.",
+    description:
+      "2 to 6-hour interactive technology sprints designed to give students practical, first-principles exposure to emerging tech tools and frameworks.",
+    label: "Workshop",
+    duration: "2 – 6 Hours",
+    outcome: "Guided working build & direct technology exposure",
+    type: "workshop",
+  },
+  {
+    id: "bootcamps",
+    title: "Intensive Bootcamps",
+    subtitle: "Learn it by building.",
+    description:
+      "1 to 5-day deep-dive project development sprints where students master a modern stack by building production-grade applications from scratch.",
+    label: "Bootcamp",
+    duration: "1 – 5 Days",
+    outcome: "Full-stack project deployed on GitHub with live URL",
+    type: "bootcamp",
+  },
+  {
+    id: "hackathons",
+    title: "Campus Hackathons",
+    subtitle: "Put your skills to the test.",
+    description:
+      "24 to 48-hour collaborative innovation sprints where student teams build real-world solutions, compete for cash prizes, and pitch to industry judges.",
+    label: "Hackathon",
+    duration: "24 – 48 Hours",
+    outcome: "Functional team prototype, pitch deck & awards",
+    type: "hackathon",
+  },
+];
+
+export const COURSES: Course[] = THREE_EXPERIENCES;
+
+export const UPCOMING_EVENTS: EventItem[] = [
+  {
+    id: "data-ai-business",
+    title: "Data & AI for Business Professionals",
+    tag: "Campus Flagship",
+    description:
+      "Master data analytics, machine learning fundamentals, and AI-driven decision making designed for college students ready to lead digital transformation.",
+    date: "September 20, 2026",
+    time: "10:00 am",
+    venueLine1: "College Campus Auditorium",
+    venueLine2: "Live On-Campus Lab",
+    imageUrl:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85",
+    imageAlt: "Data analytics dashboard with AI-powered charts and insights",
+  },
+  {
+    id: "ai-coding-agents",
+    title: "AI Coding & Coding Agents",
+    tag: "Campus Flagship",
+    description:
+      "Learn to build intelligent coding agents, leverage AI-assisted development workflows, and master prompt engineering for production-grade software.",
+    date: "October 5, 2026",
+    time: "10:00 am",
+    venueLine1: "College Campus Auditorium",
+    venueLine2: "Live On-Campus Lab",
+    imageUrl: "/gallery/ai_coding.png",
+    imageAlt: "AI Coding and Autonomous Agents 3D technology visual",
+  },
+  {
+    id: "claude-mastery-bootcamp",
+    title: "Claude Mastery Bootcamp",
+    tag: "Campus Certification",
+    description:
+      "Deep-dive into Claude AI — master advanced prompting, tool use, agents, and enterprise integration patterns to earn your certification.",
+    date: "October 18, 2026",
+    time: "10:00 am",
+    venueLine1: "College Campus Auditorium",
+    venueLine2: "Live On-Campus Lab",
+    imageUrl: "/gallery/claude_banner.jpg",
+    imageAlt: "Anthropic Claude Generative AI Mastery Bootcamp Visual",
+  },
+];
+
+export const TECH_TRACKS: TechTrack[] = [
+  {
+    id: "ai-genai",
+    name: "AI & Generative AI",
+    tag: "Flagship Track",
+    description: "LLM integration, Prompt Engineering, RAG Architectures, Vector Databases & OpenAI/Claude APIs.",
+    iconName: "Sparkles",
+    badgeColor: "bg-[#eef2ff] text-[#304ffe]",
+    topics: ["RAG Systems", "LangChain & LlamaIndex", "Vector Search", "Prompt Engineering"],
+  },
+  {
+    id: "ai-coding-agents",
+    name: "AI Coding Tools & Agents",
+    tag: "High Demand",
+    description: "Modern AI-augmented pair programming, Claude Code, Cursor workflows, and autonomous coding agents.",
+    iconName: "Bot",
+    badgeColor: "bg-[#f0fdf4] text-[#16a34a]",
+    topics: ["Cursor AI", "Claude Code", "Autonomous Tool Calling", "Repo-Level Debugging"],
+  },
+  {
+    id: "full-stack",
+    name: "Full Stack Web Development",
+    tag: "Core Engineering",
+    description: "Modern web engineering with Next.js, React 19, Node.js, REST APIs, Tailwind CSS & PostgreSQL.",
+    iconName: "Layout",
+    badgeColor: "bg-[#fdf2f8] text-[#db2777]",
+    topics: ["Next.js App Router", "React 19 Hooks", "Node.js Services", "Database Design"],
+  },
+  {
+    id: "python-systems",
+    name: "Python & Data Engineering",
+    tag: "Foundational",
+    description: "Clean object-oriented Python, asynchronous programming, NumPy/Pandas pipelines & API engineering.",
+    iconName: "Code2",
+    badgeColor: "bg-[#fffbeb] text-[#d97706]",
+    topics: ["Async Python", "FastAPI Endpoints", "Pandas & ETL", "OOP Best Practices"],
+  },
+  {
+    id: "java-enterprise",
+    name: "Java & Microservices",
+    tag: "Enterprise Ready",
+    description: "Enterprise Java design patterns, Spring Boot microservices, security auth, and cloud database connections.",
+    iconName: "Server",
+    badgeColor: "bg-[#f5f3ff] text-[#7c3aed]",
+    topics: ["Spring Boot 3", "Microservices", "RESTful Architecture", "Hibernate / JPA"],
+  },
+  {
+    id: "data-analytics",
+    name: "Data Analytics & BI",
+    tag: "Industry Standard",
+    description: "Exploratory data analysis, SQL query optimization, PowerBI dashboards, and business insights.",
+    iconName: "BarChart3",
+    badgeColor: "bg-[#ecfeff] text-[#0891b2]",
+    topics: ["Advanced SQL", "Power BI Dashboards", "Statistical Analysis", "Data Storytelling"],
+  },
+  {
+    id: "cloud-devops",
+    name: "Cloud Computing & DevOps",
+    tag: "Infrastructure",
+    description: "Containerization with Docker, Kubernetes clusters, CI/CD automated deployment, and AWS/GCP essentials.",
+    iconName: "Cloud",
+    badgeColor: "bg-[#f0f9ff] text-[#0284c7]",
+    topics: ["Docker Containers", "Kubernetes Pods", "GitHub Actions CI/CD", "AWS Cloud Deployments"],
+  },
+  {
+    id: "cybersecurity",
+    name: "Cybersecurity & Ethical Hacking",
+    tag: "Security Focus",
+    description: "Vulnerability assessment, network security scanning, OWASP top 10 web exploits, and ethical hacking fundamentals.",
+    iconName: "Shield",
+    badgeColor: "bg-[#fef2f2] text-[#dc2626]",
+    topics: ["OWASP Top 10", "Network Penetration", "JWT / Auth Security", "Vulnerability Auditing"],
+  },
+  {
+    id: "git-github",
+    name: "Git & Collaborative Workflows",
+    tag: "Essential Skill",
+    description: "Branching strategies, pull request workflows, merge conflict resolution, and open source collaboration.",
+    iconName: "GitBranch",
+    badgeColor: "bg-[#f1f5f9] text-[#475569]",
+    topics: ["Git Branching / Merging", "PR Code Reviews", "GitHub Actions", "Team Collaboration"],
+  },
+];
+
+export const COLLEGE_MATRIX: CollegeMatrixItem[] = [
+  {
+    experience: "Technology Workshop",
+    duration: "2 to 6 Hours",
+    purpose: "Explore an emerging technology hands-on",
+    studentOutcome: "Guided working build, foundational clarity & participation certificate",
+    idealFor: "1st & 2nd year students, tech club inductions, department seminars",
+  },
+  {
+    experience: "Intensive Bootcamp",
+    duration: "1 to 5 Days",
+    purpose: "Develop deep practical skill on a production stack",
+    studentOutcome: "Deployable live project on GitHub, code review & verified credential",
+    idealFor: "2nd, 3rd & final year students, placement preparation cohorts",
+  },
+  {
+    experience: "Campus Hackathon",
+    duration: "24 to 48 Hours",
+    purpose: "Build, compete, and solve real-world industry problem statements",
+    studentOutcome: "Working team prototype, live pitch before judges, cash awards & trophy",
+    idealFor: "Inter-departmental talent, innovation cells, pre-placement hackathons",
+  },
+  {
+    experience: "College Tech Fest Partner",
+    duration: "Custom (1 – 3 Days)",
+    purpose: "Multi-track campus-wide technical immersion and grand keynote",
+    studentOutcome: "Multiple concurrent tracks, mega hackathon, auditorium masterclasses & hiring talks",
+    idealFor: "Annual college tech fests, university summits, institution-wide festivals",
+  },
+];
+
+export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
+  {
+    stepNumber: "01",
+    title: "College Selects Experience & Tech Track",
+    description: "Choose between Workshops, Bootcamps, Hackathons, or Tech Fests across AI, Full-Stack, Java, Python, or Cloud.",
+    highlight: "Customized to your academic calendar and student year.",
+  },
+  {
+    stepNumber: "02",
+    title: "Codegnan Customizes Curriculum & Infrastructure",
+    description: "Our technical architects design syllabus, problem statements, cloud sandbox access, and project blueprints.",
+    highlight: "Zero hassle setup for college faculty and lab administrators.",
+  },
+  {
+    stepNumber: "03",
+    title: "Mentor Team Arrives on Your Campus",
+    description: "Senior technical trainers, architects from top MNCs, and product engineers arrive at your college labs/auditorium.",
+    highlight: "Direct physical face-to-face mentorship and live debugging.",
+  },
+  {
+    stepNumber: "04",
+    title: "Students Build, Code & Innovate Live",
+    description: "80% hands-on coding from minute one. Students write code, solve challenges, test logic, and build working software.",
+    highlight: "No boring slide monologues — real terminal and IDE building.",
+  },
+  {
+    stepNumber: "05",
+    title: "Outcomes, Verified Certificates & Recognition",
+    description: "Every student receives an authentic verifiable certificate with Credential ID & QR code. Hackathon winners win awards.",
+    highlight: "Proven portfolio proof for resumes and placement drives.",
+  },
+];
+
+export const MENTORS: Mentor[] = [
+  {
+    id: "sairam-uppugundla",
+    name: "Sairam Uppugundla",
+    role: "Founder & Chief AI Architect",
+    organization: "Codegnan IT Solutions",
+    experience: "10+ Yrs in AI Systems & EdTech",
+    category: "AI & ML",
+    avatarUrl:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    bio: "Pioneered hands-on engineering cohorts for over 50,000+ college developers. Specializes in large-scale distributed architectures and enterprise GenAI model deployments.",
+    expertise: [
+      "Generative AI & LLMs",
+      "Cloud Architecture",
+      "Enterprise RAG Pipelines",
+      "Python Ecosystem",
+    ],
+    achievements: [
+      "Trained 50,000+ college engineers",
+      "Keynote speaker at 30+ tech summits",
+      "Advises high-growth AI startups",
+    ],
+    featuredBadge: "Chief Mentor",
+    linkedinUrl: "https://linkedin.com",
+    githubUrl: "https://github.com",
+  },
+  {
+    id: "kavya-sree",
+    name: "Kavya Sree",
+    role: "Principal Deep Learning & Vision Lead",
+    organization: "AI Computer Vision Lab",
+    experience: "7+ Yrs Research & Production AI",
+    category: "AI & ML",
+    avatarUrl:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+    bio: "Specializes in multimodal computer vision architectures, PyTorch pipelines, real-time object detection models, and high-throughput inference acceleration on edge devices.",
+    expertise: [
+      "Computer Vision & OpenCV",
+      "PyTorch & TensorFlow",
+      "Multimodal Transformers",
+      "Edge AI Inference",
+    ],
+    achievements: [
+      "Published 4 vision AI papers",
+      "Led 15+ production vision deployments",
+      "Mentored 1,200+ AI practitioners",
+    ],
+    featuredBadge: "Vision AI Specialist",
+    linkedinUrl: "https://linkedin.com",
+    githubUrl: "https://github.com",
+  },
+  {
+    id: "venkata-krishna",
+    name: "Venkata Krishna",
+    role: "Lead Full-Stack & Distributed Systems Architect",
+    organization: "Enterprise Cloud Specialist",
+    experience: "8+ Yrs Full-Stack Engineering",
+    category: "Full-Stack & Cloud",
+    avatarUrl:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+    bio: "Passionate about high-concurrency cloud backends, microservices design, modern React/Next.js platforms, container orchestration with Kubernetes, and zero-downtime CI/CD.",
+    expertise: [
+      "Next.js & React 19",
+      "Golang & Node.js Services",
+      "Docker & Kubernetes",
+      "System Design & Caching",
+    ],
+    achievements: [
+      "Architected systems for 2M+ daily requests",
+      "Mentored 20+ hackathon winning teams",
+      "Active open source maintainer",
+    ],
+    featuredBadge: "Full-Stack Architect",
+    linkedinUrl: "https://linkedin.com",
+    githubUrl: "https://github.com",
+  },
+  {
+    id: "dr-rajesh-sharma",
+    name: "Dr. Rajesh Sharma",
+    role: "Director of AI Research & Autonomous Systems",
+    organization: "Machine Intelligence Research",
+    experience: "12+ Yrs AI Research & Data Science",
+    category: "System Architecture",
+    avatarUrl:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80",
+    bio: "Focuses on agentic multi-agent orchestration, autonomous tool calling, LangGraph workflows, vector retrieval indexing, and production ML pipelines.",
+    expertise: [
+      "Autonomous Agent Loops",
+      "LangChain & LlamaIndex",
+      "Vector DB Architecture",
+      "Prompt Optimization",
+    ],
+    achievements: [
+      "Doctorate in Machine Intelligence",
+      "Conducted 40+ corporate masterclasses",
+      "AI consultant to Fortune 500s",
+    ],
+    featuredBadge: "Research Director",
+    linkedinUrl: "https://linkedin.com",
+    githubUrl: "https://github.com",
+  },
+];
+
+export const CAMPUS_FAQS: FAQItem[] = [
+  {
+    id: "faq-campus-delivery",
+    question: "Does Codegnan Labs physically come to our college campus?",
+    answer:
+      "Yes, absolutely! That is the core of Codegnan Labs. Our senior technical trainers, product developers, and hackathon mentors physically travel to your college campus, conduct live sessions in your auditoriums or computer labs, and assist students face-to-face with hands-on debugging.",
+    category: "Colleges & Management",
+  },
+  {
+    id: "faq-college-infrastructure",
+    question: "What infrastructure does the college need to provide?",
+    answer:
+      "All we require is a standard computer lab or seminar hall with student laptops, power sockets, projector/AV setup, and internet access. We provide all cloud runtime environments, API access keys, problem statements, and curriculum materials.",
+    category: "Colleges & Management",
+  },
+  {
+    id: "faq-student-capacity",
+    question: "What is the typical student capacity for a campus workshop or hackathon?",
+    answer:
+      "We cater to single classroom cohorts of 50–100 students as well as large-scale college tech events with 500–1,000+ participants across multiple computer labs and auditoriums with dedicated teaching assistants for every 30 students.",
+    category: "Colleges & Management",
+  },
+  {
+    id: "faq-custom-curriculum",
+    question: "Can the curriculum be customized for our specific department or academic year?",
+    answer:
+      "Yes. We frequently tailor workshops for 1st-year exploratory tracks (e.g. Intro to Python & AI Tools), 2nd/3rd-year technical depth (e.g. Next.js Full Stack, Spring Boot), and final-year placement hackathons tailored to hiring partner problem statements.",
+    category: "Workshops & Bootcamps",
+  },
+  {
+    id: "faq-certificate-verification",
+    question: "How do students and recruiters verify Codegnan Labs certificates?",
+    answer:
+      "Every certificate issued carries an official tamper-proof Credential ID (e.g., CG-AI-2026-94812) and dynamic QR code. Recruiters and university evaluators can scan the QR code to instantly verify student project scores and completion status.",
+    category: "Certificates & Outcomes",
+  },
+  {
+    id: "faq-hackathon-prizes",
+    question: "How are Hackathons structured and judged?",
+    answer:
+      "Campus hackathons run as 24 or 48-hour build sprints. Student teams work on real-world industry problem statements with milestone mentor check-ins. On Demo Day, teams present working prototypes before a jury panel of senior architects.",
+    category: "Hackathons",
+  },
+  {
+    id: "faq-lead-time",
+    question: "How far in advance should our college schedule a program?",
+    answer:
+      "We recommend booking 2 to 3 weeks in advance so our technical team can align trainer schedules, customize curriculum problem statements, and coordinate cloud lab provisioning with your faculty coordinators.",
+    category: "Colleges & Management",
+  },
+];

@@ -210,42 +210,6 @@ const GALLERY_ITEMS: GalleryItem[] = [
     description:
       "Students deeply engaged in high-velocity full-stack and AI engineering problem-solving inside Codegnan's training studio.",
   },
-  {
-    id: "claude-mastery-flagship",
-    type: "image",
-    src: "/gallery/claude_banner.jpg",
-    alt: "Anthropic Claude Generative AI Mastery Bootcamp Visual",
-    title: "Claude AI Mastery Bootcamp",
-    category: "Bootcamps",
-    tag: "Claude AI",
-    date: "October 2026",
-    description:
-      "Comprehensive certification training cohort on Claude 3.5 Sonnet, tool integration, agentic frameworks, and production enterprise deployments.",
-  },
-  {
-    id: "ai-coding-agents-flagship",
-    type: "image",
-    src: "/gallery/ai_coding.png",
-    alt: "AI Coding & Autonomous Agents 3D technology visual",
-    title: "AI Coding & Autonomous Agents",
-    category: "Workshops",
-    tag: "AI Coding",
-    date: "October 2026",
-    description:
-      "Flagship workshop exploring neural architectures, AI-augmented pair programming, autonomous coding agents, and real-time execution pipelines.",
-  },
-  {
-    id: "official-workshop-certificate",
-    type: "image",
-    src: "/gallery/workshop_certificate.png",
-    alt: "Official Codegnan Certificate of Participation in Artificial Intelligence & Autonomous Agents",
-    title: "Official Verified Workshop Certificate",
-    category: "Workshops",
-    tag: "Verified Credential",
-    date: "July 2026",
-    description:
-      "Official certificate of completion awarded for successful architecture, hands-on engineering, and cloud deployment of production AI & Autonomous Agent systems.",
-  },
 ];
 
 const CATEGORIES = ["All Media", "Workshops", "Videos", "Hackathons", "Bootcamps"] as const;
@@ -299,14 +263,14 @@ export default function GalleryPage() {
       {/* 1. TOP HEADER / NAVBAR */}
       {/* ========================================================= */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-[#f0f1f7]">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 h-[88px] sm:h-[94px] flex items-center justify-between">
           {/* Brand Logo & Navigation */}
           <div className="flex items-center gap-10">
-            <a href="/" className="flex items-center" aria-label="Codegnan Home">
+            <a href="/" className="flex items-center py-1" aria-label="Codegnan Lab Home">
               <img
-                src="/Codegnan-New-Logo.pngw3.webp"
-                alt="Codegnan"
-                className="h-9 w-auto object-contain"
+                src="/codegnan_lab.png"
+                alt="Codegnan Lab"
+                className="h-12 sm:h-14 lg:h-[60px] w-auto object-contain transition-transform hover:scale-105"
               />
             </a>
 
@@ -756,11 +720,11 @@ export default function GalleryPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-14 border-b border-[#eaedf5]">
             {/* Column 1: Brand Logo + Social Icons */}
             <div className="md:col-span-3">
-              <a href="/" className="inline-block" aria-label="Codegnan Home">
+              <a href="/" className="inline-block" aria-label="Codegnan Lab Home">
                 <img
-                  src="/Codegnan-New-Logo.pngw3.webp"
-                  alt="Codegnan"
-                  className="h-9 w-auto object-contain"
+                  src="/codegnan_lab.png"
+                  alt="Codegnan Lab"
+                  className="h-11 sm:h-12 w-auto object-contain"
                 />
               </a>
 
@@ -881,10 +845,10 @@ export default function GalleryPage() {
                 Codegnan Training Center, Vijayawada, Andhra Pradesh, India.
               </p>
               <a
-                href="mailto:contact@codegnan.com"
+                href="mailto:cto@codegnan.com"
                 className="text-xs font-semibold text-[#304ffe] hover:underline"
               >
-                contact@codegnan.com
+                cto@codegnan.com
               </a>
             </div>
           </div>
