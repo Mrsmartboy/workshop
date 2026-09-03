@@ -19,107 +19,119 @@ export function MentorsSection() {
               {/* Top-Left Group: Trainers */}
               <div>
                 <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4">
-                  <strong className="font-bold text-[#0f172a]">Trainers</strong> are alumni of IITs and Top MNCs
+                  <strong className="font-bold text-[#0f172a]">Executive Leadership</strong> at Codegnan
                 </h3>
                 <div className="grid grid-cols-2 gap-3.5">
-                  {/* Rahul */}
-                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow">
-                    <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
+                  {/* Madhu Parvathaneni - CTO */}
+                  <div className="rounded-[14px] bg-white border border-[#304ffe]/30 overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
+                    <span className="absolute top-1.5 right-1.5 z-10 bg-[#304ffe] text-white text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-xs">
+                      CTO
+                    </span>
+                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
                       <img
-                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                        alt="Rahul - Ex. Amazon"
+                        src="/gallery/madhuparvathaneni_cto.png"
+                        alt="Madhu Parvathaneni - CTO at Codegnan"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
                     <div className="p-3 w-full bg-white">
-                      <h4 className="text-[14px] font-bold text-[#0f172a] leading-tight">
-                        Rahul
+                      <h4 className="text-[13.5px] font-bold text-[#0f172a] leading-tight">
+                        Madhu Parvathaneni
                       </h4>
-                      <p className="text-[11px] sm:text-[12px] text-[#64748b] mt-0.5">
-                        Ex. Amazon
+                      <p className="text-[11.5px] text-[#304ffe] font-bold mt-0.5">
+                        CTO at Codegnan
                       </p>
                     </div>
                   </div>
 
-                  {/* Shashank */}
-                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow">
-                    <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
+                  {/* Saketh K - CMO */}
+                  <div className="rounded-[14px] bg-white border border-[#7c3aed]/30 overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
+                    <span className="absolute top-1.5 right-1.5 z-10 bg-[#7c3aed] text-white text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-xs">
+                      CMO
+                    </span>
+                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
                       <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
-                        alt="Shashank - IIT Bombay"
+                        src="/gallery/saketh K-cmo.png"
+                        alt="Saketh K - CMO at Codegnan"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
                     <div className="p-3 w-full bg-white">
-                      <h4 className="text-[14px] font-bold text-[#0f172a] leading-tight">
-                        Shashank
+                      <h4 className="text-[13.5px] font-bold text-[#0f172a] leading-tight">
+                        Saketh K
                       </h4>
-                      <p className="text-[11px] sm:text-[12px] text-[#64748b] mt-0.5">
-                        IIT Bombay
+                      <p className="text-[11.5px] text-[#7c3aed] font-bold mt-0.5">
+                        CMO at Codegnan
                       </p>
                     </div>
                   </div>
                 </div>
                 <p className="text-center text-[12px] text-[#94a3b8] mt-2.5 font-normal">
-                  and more...
+                  and executive leadership...
                 </p>
               </div>
 
-              {/* Bottom-Left Group: Product Developers */}
+              {/* Bottom-Left Group: Product Developers & Core Engineers */}
               <div>
                 <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4">
-                  Get doubts resolved by{" "}
+                  Learn directly from{" "}
                   <strong className="font-bold text-[#0f172a]">
-                    Product Developers
+                    Core Engineers &amp; Mentors
                   </strong>
                 </h3>
                 <div className="grid grid-cols-2 gap-3.5">
-                  {/* Revanth */}
-                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow">
-                    <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
+                  {/* Kesava Datta - Full Stack Engineer */}
+                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
+                    <span className="absolute top-1.5 right-1.5 z-10 bg-[#059669] text-white text-[8.5px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
+                      FULL STACK
+                    </span>
+                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
                       <img
-                        src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80"
-                        alt="Revanth - Backend Architect IIT Guwahati"
+                        src="/gallery/kesavadatta_fullstackengineer.png"
+                        alt="Kesava Datta - Full Stack Engineer, Top MNC"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
                     <div className="p-3 w-full bg-white">
-                      <h4 className="text-[14px] font-bold text-[#0f172a] leading-tight">
-                        Revanth
+                      <h4 className="text-[13px] font-bold text-[#0f172a] leading-tight">
+                        Kesava Datta
                       </h4>
-                      <p className="text-[11px] sm:text-[12px] text-[#64748b] mt-0.5 leading-tight">
-                        Backend Architect
+                      <p className="text-[11px] text-[#059669] font-bold mt-0.5 leading-tight">
+                        Full Stack Engineer
                       </p>
-                      <p className="text-[10px] text-[#94a3b8]">IIT Guwahati</p>
+                      <p className="text-[10px] text-[#94a3b8]">Top MNC Company</p>
                     </div>
                   </div>
 
-                  {/* Pavan */}
-                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow">
-                    <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
+                  {/* Supraja - AI Engineer */}
+                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
+                    <span className="absolute top-1.5 right-1.5 z-10 bg-[#ea580c] text-white text-[8.5px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
+                      AI ENGINEER
+                    </span>
+                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
                       <img
-                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
-                        alt="Pavan - Software Development Lead BIT Mesra"
+                        src="/gallery/supraja_ai_engineer.jpeg"
+                        alt="Supraja - AI Engineer at Codegnan"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
                     <div className="p-3 w-full bg-white">
-                      <h4 className="text-[14px] font-bold text-[#0f172a] leading-tight">
-                        Pavan
+                      <h4 className="text-[13px] font-bold text-[#0f172a] leading-tight">
+                        Supraja
                       </h4>
-                      <p className="text-[11px] sm:text-[12px] text-[#64748b] mt-0.5 leading-tight">
-                        Software Development Lead
+                      <p className="text-[11px] text-[#ea580c] font-bold mt-0.5 leading-tight">
+                        AI Engineer
                       </p>
-                      <p className="text-[10px] text-[#94a3b8]">BIT Mesra</p>
+                      <p className="text-[10px] text-[#94a3b8]">Codegnan Labs</p>
                     </div>
                   </div>
                 </div>
                 <p className="text-center text-[12px] text-[#94a3b8] mt-2.5 font-normal">
-                  and more...
+                  and more engineering leads...
                 </p>
               </div>
             </div>
@@ -128,11 +140,14 @@ export function MentorsSection() {
             <div className="lg:col-span-4 flex justify-center py-2">
               <div className="w-full max-w-[280px] rounded-[22px] overflow-hidden border border-[#dce3ec] shadow-[0_12px_35px_rgba(20,24,68,0.08)] bg-white flex flex-col items-center">
                 <div className="w-full h-[270px] sm:h-[310px] overflow-hidden bg-[#e2e8f0] relative">
-                  <img
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80"
-                    alt="Student learning coding at Codegnan"
-                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                  <video
+                    src="/gallery/engagewithstudents.MP4"
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                    aria-label="Students engaging in a Codegnan workshop"
+                    className="absolute left-1/2 top-1/2 h-[90%] w-[184%] -translate-x-1/2 -translate-y-1/2 -rotate-90 object-cover object-center transition-transform duration-500"
                   />
                 </div>
                 <div className="py-4 px-6 w-full text-center bg-white flex flex-col items-center justify-center border-t border-[#edf2f7]">
@@ -159,42 +174,48 @@ export function MentorsSection() {
                   help you land your first job
                 </h3>
                 <div className="grid grid-cols-2 gap-3.5">
-                  {/* Sriram Teja */}
-                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow">
+                  {/* Eswar K - Senior Agentic AI Engineer */}
+                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
+                    <span className="absolute top-1.5 right-1.5 z-10 bg-[#304ffe] text-white text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
+                      AGENTIC AI
+                    </span>
                     <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
-                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
-                        alt="Sriram Teja - AIR 84, IIT Bombay"
+                        src="/gallery/eswark-Senior Agentic AI Engineer.png"
+                        alt="Eswar K - Senior Agentic AI Engineer"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
                     <div className="p-3 w-full bg-white">
                       <h4 className="text-[14px] font-bold text-[#0f172a] leading-tight">
-                        Sriram Teja
+                        Eswar K
                       </h4>
                       <p className="text-[11px] sm:text-[12px] text-[#64748b] mt-0.5">
-                        AIR 84, IIT Bombay
+                        Senior Agentic AI Engineer
                       </p>
                     </div>
                   </div>
 
-                  {/* Trivikram */}
-                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow">
+                  {/* Sivaram - Senior Full Stack Engineer */}
+                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
+                    <span className="absolute top-1.5 right-1.5 z-10 bg-[#304ffe] text-white text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
+                      SENIOR FULL STACK
+                    </span>
                     <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
-                        src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80"
-                        alt="Trivikram - AIR 93, IIT Delhi"
+                        src="/gallery/sivaram_fullStackEngineer.png"
+                        alt="Sivaram - Senior Full Stack Engineer at Codegnan"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
                     <div className="p-3 w-full bg-white">
                       <h4 className="text-[14px] font-bold text-[#0f172a] leading-tight">
-                        Trivikram
+                        Sivaram
                       </h4>
                       <p className="text-[11px] sm:text-[12px] text-[#64748b] mt-0.5">
-                        AIR 93, IIT Delhi
+                        Senior Full Stack Engineer
                       </p>
                     </div>
                   </div>
@@ -204,54 +225,60 @@ export function MentorsSection() {
                 </p>
               </div>
 
-              {/* Bottom-Right Group: Masterclasses */}
+              {/* Bottom-Right Group: Masterclasses & Agentic AI */}
               <div>
                 <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4">
                   Gain expert insights from{" "}
                   <strong className="font-bold text-[#0f172a]">
-                    Masterclasses
+                    Agentic AI &amp; Masterclasses
                   </strong>
                 </h3>
                 <div className="grid grid-cols-2 gap-3.5">
-                  {/* Rakesh Misra */}
-                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow">
-                    <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
+                  {/* Joseph - MERN Stack Developer */}
+                  <div className="rounded-[14px] bg-white border border-[#304ffe]/30 overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
+                    <span className="absolute top-1.5 right-1.5 z-10 bg-[#304ffe] text-white text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
+                      MERN STACK
+                    </span>
+                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
                       <img
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
-                        alt="Rakesh Misra - Cofounder, Uhana Stanford Alumnus"
+                        src="/gallery/joseph_mernstackdeveloper.png"
+                        alt="Joseph - MERN Stack Developer at Codegnan"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
                     <div className="p-3 w-full bg-white">
-                      <h4 className="text-[14px] font-bold text-[#0f172a] leading-tight">
-                        Rakesh Misra
+                      <h4 className="text-[13px] font-bold text-[#0f172a] leading-tight">
+                        Joseph
                       </h4>
-                      <p className="text-[11px] sm:text-[12px] text-[#64748b] mt-0.5 leading-tight">
-                        Cofounder, Uhana
+                      <p className="text-[11px] text-[#304ffe] font-bold mt-0.5 leading-tight">
+                        MERN Stack Developer
                       </p>
-                      <p className="text-[10px] text-[#94a3b8]">Stanford Alumnus</p>
+                      <p className="text-[10px] text-[#94a3b8]">Codegnan Labs</p>
                     </div>
                   </div>
 
-                  {/* Pranavi */}
-                  <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow">
-                    <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
+                  {/* Pranathi - AI Engineer */}
+                  <div className="rounded-[14px] bg-white border border-[#7c3aed]/30 overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
+                    <span className="absolute top-1.5 right-1.5 z-10 bg-[#7c3aed] text-white text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
+                      AI ENGINEER
+                    </span>
+                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
                       <img
-                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
-                        alt="Pranavi - Machine Learning Scientist, Apple"
+                        src="/gallery/pranathi_ai_engineer.png"
+                        alt="Pranathi - AI Engineer at Codegnan"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
                     <div className="p-3 w-full bg-white">
-                      <h4 className="text-[14px] font-bold text-[#0f172a] leading-tight">
-                        Pranavi
+                      <h4 className="text-[13px] font-bold text-[#0f172a] leading-tight">
+                        Pranathi
                       </h4>
-                      <p className="text-[11px] sm:text-[12px] text-[#64748b] mt-0.5 leading-tight">
-                        Machine Learning
+                      <p className="text-[11px] text-[#7c3aed] font-bold mt-0.5 leading-tight">
+                        AI Engineer
                       </p>
-                      <p className="text-[10px] text-[#94a3b8]">Scientist, Apple</p>
+                      <p className="text-[10px] text-[#94a3b8]">Codegnan Labs</p>
                     </div>
                   </div>
                 </div>

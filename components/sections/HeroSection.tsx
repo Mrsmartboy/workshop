@@ -1,6 +1,5 @@
 import React from "react";
 import { BookOpen, Award, Trophy, Building2 } from "lucide-react";
-import { AnimatedCounterItem } from "@/components/ui/AnimatedCounter";
 
 export function HeroSection({
   scrollToSection,
@@ -55,13 +54,16 @@ export function HeroSection({
             {/* Verified Campus Stats Strip */}
             <div className="mt-8 pt-6 border-t border-[#eaedf6] grid grid-cols-3 gap-4 sm:gap-8 max-w-[560px]">
               <div className="pr-2">
-                <AnimatedCounterItem end={50000} suffix="+" label="Students Impacted" />
+                <strong className="block text-[26px] sm:text-[30px] font-black leading-none text-[#0d1033]">50,000+</strong>
+                <span className="mt-2 block text-[12px] sm:text-[13px] font-semibold text-[#606482]">Students Impacted</span>
               </div>
               <div className="pl-2 sm:pl-4 border-l border-[#eaedf6]">
-                <AnimatedCounterItem end={250} suffix="+" label="Campus Workshops" />
+                <strong className="block text-[26px] sm:text-[30px] font-black leading-none text-[#0d1033]">250+</strong>
+                <span className="mt-2 block text-[12px] sm:text-[13px] font-semibold text-[#606482]">Campus Workshops</span>
               </div>
               <div className="pl-2 sm:pl-4 border-l border-[#eaedf6]">
-                <AnimatedCounterItem end={100} suffix="+" label="Hackathons" />
+                <strong className="block text-[26px] sm:text-[30px] font-black leading-none text-[#0d1033]">100+</strong>
+                <span className="mt-2 block text-[12px] sm:text-[13px] font-semibold text-[#606482]">Hackathons</span>
               </div>
             </div>
 

@@ -31,6 +31,42 @@ interface GalleryItem {
 
 const GALLERY_ITEMS: GalleryItem[] = [
   {
+    id: "fullstack-workshop-video",
+    type: "video",
+    src: "/gallery/fullstack_workshop.MP4",
+    alt: "Full Stack Web Development Workshop Live Demonstration",
+    title: "Full Stack Web Development Workshop",
+    category: "Workshops",
+    tag: "Full Stack Web",
+    date: "September 2026",
+    description:
+      "Comprehensive full-stack development workshop covering modern frontends, robust backend APIs, database modeling, and real-time cloud deployment pipelines.",
+  },
+  {
+    id: "dsa-workshop-cohort",
+    type: "image",
+    src: "/gallery/DSA_workshop.JPG",
+    alt: "Data Structures & Algorithms (DSA) Workshop Mentorship Session",
+    title: "Data Structures & Algorithms (DSA) Workshop",
+    category: "Workshops",
+    tag: "DSA & Problem Solving",
+    date: "September 2026",
+    description:
+      "Intensive hands-on Data Structures & Algorithms masterclass with deep mentor guidance, algorithmic optimization, and competitive coding problem solving.",
+  },
+  {
+    id: "python-agentic-ai-workshop",
+    type: "image",
+    src: "/gallery/python_workshop.JPG",
+    alt: "Python & Agentic AI Workshop Campus Cohort with Mentors and Students",
+    title: "Python & Agentic AI Workshop Cohort",
+    category: "Workshops",
+    tag: "Python & Agentic AI",
+    date: "September 2026",
+    description:
+      "Hands-on Python and Agentic AI masterclass cohort where college students and faculty built autonomous LLM agents and multi-agent workflows with expert Codegnan mentors.",
+  },
+  {
     id: "computer-vision-video",
     type: "video",
     src: "/gallery/computer_vision_workshop.mp4",
@@ -513,7 +549,9 @@ export default function GalleryPage() {
                           playsInline
                           style={{
                             objectPosition:
-                              item.id === "voice-chatbot-video"
+                              item.id === "fullstack-workshop-video"
+                                ? "center bottom"
+                                : item.id === "voice-chatbot-video"
                                 ? "center 18%"
                                 : item.id === "n8n-workshop-video"
                                 ? "center 20%"
