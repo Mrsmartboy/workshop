@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { Navbar } from "@/components/layout/Navbar";
 import {
-  ShoppingBag,
-  ChevronDown,
-  Menu,
   X,
   Play,
   Maximize2,
@@ -254,8 +252,6 @@ export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<string>("All Media");
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
 
   const filteredItems = GALLERY_ITEMS.filter((item) => {
     const matchesCategory =
@@ -295,157 +291,7 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-white text-[#0d1033] flex flex-col font-sans">
-      {/* ========================================================= */}
-      {/* 1. TOP HEADER / NAVBAR */}
-      {/* ========================================================= */}
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-[#f0f1f7]">
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 h-[88px] sm:h-[94px] flex items-center justify-between">
-          {/* Brand Logo & Navigation */}
-          <div className="flex items-center gap-10">
-            <a href="/" className="flex items-center py-1" aria-label="Codegnan Lab Home">
-              <img
-                src="/codegnan_lab.png"
-                alt="Codegnan Lab"
-                className="h-12 sm:h-14 lg:h-[60px] w-auto object-contain transition-transform hover:scale-105"
-              />
-            </a>
-
-            {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center gap-7 text-[15px] font-medium text-[#0d1033]">
-              <a href="/" className="hover:text-[#304ffe] transition-colors">
-                Home
-              </a>
-
-              {/* Pages Dropdown */}
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setPagesDropdownOpen(!pagesDropdownOpen)}
-                  className="flex items-center gap-1 text-[#0d1033] hover:text-[#304ffe] transition-colors focus:outline-none"
-                  aria-expanded={pagesDropdownOpen}
-                >
-                  <span>Pages</span>
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      pagesDropdownOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {pagesDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-[0_10px_30px_rgba(20,24,68,0.12)] border border-[#eaedf6] py-2 z-50 animate-in fade-in">
-                    <a
-                      href="/#courses"
-                      onClick={() => setPagesDropdownOpen(false)}
-                      className="block px-4 py-2 text-xs font-medium text-[#606482] hover:text-[#304ffe] hover:bg-[#f8f9ff] rounded-lg"
-                    >
-                      All Courses
-                    </a>
-                    <a
-                      href="/#about"
-                      onClick={() => setPagesDropdownOpen(false)}
-                      className="block px-4 py-2 text-xs font-medium text-[#606482] hover:text-[#304ffe] hover:bg-[#f8f9ff] rounded-lg"
-                    >
-                      About Us
-                    </a>
-                    <a
-                      href="/#why-us"
-                      onClick={() => setPagesDropdownOpen(false)}
-                      className="block px-4 py-2 text-xs font-medium text-[#606482] hover:text-[#304ffe] hover:bg-[#f8f9ff] rounded-lg"
-                    >
-                      Why Learning With Us
-                    </a>
-                    <a
-                      href="/#events"
-                      onClick={() => setPagesDropdownOpen(false)}
-                      className="block px-4 py-2 text-xs font-medium text-[#606482] hover:text-[#304ffe] hover:bg-[#f8f9ff] rounded-lg"
-                    >
-                      Upcoming Events
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              <a href="/#courses" className="hover:text-[#304ffe] transition-colors">
-                Courses
-              </a>
-              <a href="/gallery" className="text-[#304ffe] font-semibold transition-colors">
-                Gallery
-              </a>
-              <a href="/#about" className="hover:text-[#304ffe] transition-colors">
-                About
-              </a>
-            </nav>
-          </div>
-
-          {/* Right Action Items */}
-          <div className="flex items-center gap-5">
-            <a
-              href="/#courses"
-              className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 bg-[#304ffe] hover:bg-[#253bdf] text-white text-[12px] font-bold uppercase tracking-[0.08em] rounded-[6px] shadow-[0_6px_18px_rgba(48,79,254,0.25)] transition-all hover:-translate-y-0.5"
-            >
-              EXPLORE PROGRAMS
-            </a>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-[#0d1033] hover:text-[#304ffe]"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Dropdown Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-[#f0f1f7] bg-white px-6 py-5 space-y-4 shadow-lg">
-            <a
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-semibold text-[#606482]"
-            >
-              Home
-            </a>
-            <a
-              href="/#about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-semibold text-[#606482]"
-            >
-              About
-            </a>
-            <a
-              href="/#courses"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-semibold text-[#606482]"
-            >
-              Courses
-            </a>
-            <a
-              href="/gallery"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-bold text-[#304ffe]"
-            >
-              Gallery
-            </a>
-            <a
-              href="/#events"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-semibold text-[#606482]"
-            >
-              Upcoming Events
-            </a>
-            <a
-              href="/#courses"
-              className="block w-full text-center py-3 bg-[#304ffe] text-white text-xs font-bold uppercase tracking-wider rounded-md"
-            >
-              EXPLORE PROGRAMS
-            </a>
-          </div>
-        )}
-      </header>
+      <Navbar scrollToSection={(id) => { window.location.href = `/#${id}`; }} />
 
       {/* ========================================================= */}
       {/* 2. GALLERY HERO BANNER */}
@@ -880,13 +726,13 @@ export default function GalleryPage() {
                 Contact &amp; Campus
               </h4>
               <p className="text-[14px] text-[#606482] leading-relaxed mb-3">
-                Codegnan Training Center, Vijayawada, Andhra Pradesh, India.
+                Prasad Naidu Complex, P.B. Siddhartha Bus Stop, Moghalrajpuram, Vijayawada, Andhra Pradesh - 520010, India. Landmark: Near PB Siddhartha College of Arts and Science.
               </p>
               <a
-                href="mailto:cto@codegnan.com"
+                href="mailto:labs@codegnan.com"
                 className="text-xs font-semibold text-[#304ffe] hover:underline"
               >
-                cto@codegnan.com
+                labs@codegnan.com
               </a>
             </div>
           </div>

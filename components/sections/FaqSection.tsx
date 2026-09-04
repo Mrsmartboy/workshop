@@ -21,17 +21,15 @@ export function FaqSection({
   triggerToast: (msg: string) => void;
 }) {
   const [activeFaqCategory, setActiveFaqCategory] = useState("All");
-  // Keep answers visible on first load so the section is useful without
-  // requiring users to guess that the questions are interactive.
-  const [openFaqIds, setOpenFaqIds] = useState<string[]>(() =>
-    CAMPUS_FAQS.map((faq) => faq.id)
+  // Keep the first answer visible on first load, then let the user move
+  // through one answer at a time without the state being reset.
+  const [openFaqId, setOpenFaqId] = useState<string | null>(
+    CAMPUS_FAQS[0]?.id ?? null
   );
   const [faqSearchQuery, setFaqSearchQuery] = useState("");
 
   const toggleFaq = (id: string) => {
-    setOpenFaqIds((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
-    );
+    setOpenFaqId((currentId) => (currentId === id ? null : id));
   };
 
   const filteredFaqs = CAMPUS_FAQS.filter((faq) => {
@@ -114,7 +112,7 @@ export function FaqSection({
               </div>
             ) : (
               filteredFaqs.map((faq) => {
-                const isOpen = openFaqIds.includes(faq.id);
+                const isOpen = openFaqId === faq.id;
                 return (
                   <div
                     key={faq.id}
@@ -207,10 +205,10 @@ export function FaqSection({
                         Email Us
                       </span>
                       <a
-                        href="mailto:cto@codegnan.com"
+                        href="mailto:labs@codegnan.com"
                         className="font-semibold text-white hover:text-[#99a8ff] transition-colors"
                       >
-                        cto@codegnan.com
+                        labs@codegnan.com
                       </a>
                     </div>
                   </div>
@@ -231,15 +229,14 @@ export function FaqSection({
                 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={() => {
-                  triggerToast("Opening campus advisor direct WhatsApp chat!");
-                }}
-                className="mt-6 w-full py-3.5 bg-gradient-to-r from-[#4d31ff] to-[#782ff0] hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all hover:-translate-y-0.5"
+              <a
+                href="https://wa.me/918121289993?text=Hello%20Codegnan%20Labs%2C%20I%20would%20like%20to%20bring%20a%20workshop%2C%20bootcamp%2C%20or%20hackathon%20to%20our%20college."
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 flex w-full items-center justify-center py-3.5 bg-gradient-to-r from-[#4d31ff] to-[#782ff0] hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all hover:-translate-y-0.5"
               >
                 Chat on WhatsApp
-              </button>
+              </a>
               <p className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-white/80">
                 <ShieldCheck className="w-4 h-4" />
                 Typical response:

@@ -312,7 +312,7 @@ export function ForCollegesSection({
             );
           })}
         </div>
-        <div className="relative z-10 mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
+        {false && <div className="relative z-10 mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
           {[
             {
               quote: "The on-campus bootcamp gave me a hands-on frontend project and practical experience with APIs and GitHub.",
@@ -339,10 +339,7 @@ export function ForCollegesSection({
               </figcaption>
             </figure>
           ))}
-        </div>
-        <p className="relative z-10 mt-3 text-[11px] text-[#64748b]">
-          Feedback source: <a href="https://codegnan.com/full-stack-developer-course-in-visakhapatnam/" target="_blank" rel="noreferrer" className="font-semibold text-[#304ffe] hover:underline">Codegnan’s published student reviews</a>. Metrics are Codegnan-wide; survey samples and placement methodology are available from the Campus Partnerships Desk.
-        </p>
+        </div>}
         <div id="past-labs" className="relative z-10 mt-8 rounded-[20px] border border-[#dfe6f5] bg-white p-5 sm:p-6 shadow-[0_6px_18px_rgba(48,79,254,0.04)]">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>

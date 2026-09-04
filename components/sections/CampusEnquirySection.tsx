@@ -1,15 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Send, CheckCircle2, Phone, Mail, Clock } from "lucide-react";
+import { Send, CheckCircle2, Phone, Mail, Clock, Share2, MessageCircle } from "lucide-react";
 import { CampusEnquiryFormData } from "@/types";
+
+interface CampusEnquiryProps {
+  triggerToast: (msg: string) => void;
+  recommenderDetails?: {
+    year: string;
+    studentCount: string;
+    format: string;
+    outcome: string;
+    recommendationTitle: string;
+  } | null;
+}
 
 export function CampusEnquirySection({
   triggerToast,
-}: {
-  triggerToast: (msg: string) => void;
-}) {
+  recommenderDetails,
+}: CampusEnquiryProps) {
   const [formData, setFormData] = useState<CampusEnquiryFormData>({
     collegeName: "",
     city: "",
@@ -26,6 +36,20 @@ export function CampusEnquirySection({
 
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  // Sync recommender selections into form if present
+  useEffect(() => {
+    if (recommenderDetails) {
+      setFormData((prev) => ({
+        ...prev,
+        expectedStudentCount: recommenderDetails.studentCount || prev.expectedStudentCount,
+        programInterest: recommenderDetails.recommendationTitle || recommenderDetails.format || prev.programInterest,
+        notes: prev.notes
+          ? prev.notes
+          : `Interested in: ${recommenderDetails.recommendationTitle} for ${recommenderDetails.year} students (Goal: ${recommenderDetails.outcome}).`,
+      }));
+    }
+  }, [recommenderDetails]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,6 +75,13 @@ export function CampusEnquirySection({
     }, 900);
   };
 
+  const shareViaWhatsApp = () => {
+    const text = encodeURIComponent(
+      "Respected Sir/Madam, check out Codegnan Labs for our college campus! They organize hands-on technical workshops, bootcamps, and hackathons in AI, Full Stack, and Cloud where students build real projects: https://codegnan-workshop.vercel.app"
+    );
+    window.open(`https://wa.me/?text=${text}`, "_blank");
+  };
+
   return (
     <section id="campus-enquiry" className="relative bg-gradient-to-br from-[#020719] via-[#071139] to-[#210061] py-14 sm:py-20 lg:py-20 text-white overflow-hidden">
       {/* Background glow halos */}
@@ -63,28 +94,29 @@ export function CampusEnquirySection({
           <div className="max-w-[560px] pt-2 lg:pt-0">
             <span className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#172764] text-white text-[11px] font-extrabold uppercase tracking-wider rounded-full mb-5 border border-[#30458e]">
               <span className="text-[#a98bff]">✦</span>
-              Get Started with Codegnan Labs
+              Bring Codegnan to Your Campus
             </span>
 
             <h2 className="text-[34px] sm:text-[44px] lg:text-[48px] font-black tracking-[-0.04em] leading-[1.12]">
-              <span className="block whitespace-nowrap">Want Codegnan Labs</span>
+              <span className="block whitespace-nowrap">Plan a Codegnan Lab</span>
               <span className="block bg-gradient-to-r from-[#3561ff] via-[#7243f1] to-[#f0d8ff] bg-clip-text text-transparent">
-                at your college?
+                for your college students
               </span>
             </h2>
 
             <p className="mt-5 text-[15px] sm:text-[16px] text-[#d9def5] leading-[1.75] max-w-[490px]">
-              Whether you want a 3-hour AI Coding workshop, a 3-day Full Stack bootcamp, or an institution-wide Hackathon — submit your requirements and our team will prepare a tailored proposal.
+              Whether you want a 4-hour AI Coding workshop, a 3-day Full-Stack bootcamp, or an institution-wide Hackathon — share your requirements and our academic team will provide a tailored blueprint.
             </p>
 
+            {/* Direct Contact Links */}
             <div className="mt-8 space-y-4 pt-6 border-t border-white/20 text-xs text-white/80">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#302174] to-[#171c68] border border-[#40378f] flex items-center justify-center text-[#c5a9ff]">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-white text-sm font-extrabold">Have Questions?</span>
-                  <a href="tel:+918121289993" className="block mt-1 text-[#4d66ff] text-base font-extrabold hover:underline">+91 81212 89993</a>
+                  <span className="block text-white text-sm font-extrabold">Direct Campus Line</span>
+                  <a href="tel:+918121289993" className="block mt-0.5 text-[#8aa2ff] text-base font-extrabold hover:underline">+91 81212 89993</a>
                 </div>
               </div>
 
@@ -93,8 +125,8 @@ export function CampusEnquirySection({
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-white text-sm font-extrabold">Email Us</span>
-                  <a href="mailto:cto@codegnan.com" className="block mt-1 text-[#4d66ff] text-base font-extrabold hover:underline">cto@codegnan.com</a>
+                  <span className="block text-white text-sm font-extrabold">Curriculum &amp; Proposals</span>
+                  <a href="mailto:labs@codegnan.com" className="block mt-0.5 text-[#8aa2ff] text-base font-extrabold hover:underline">labs@codegnan.com</a>
                 </div>
               </div>
 
@@ -103,14 +135,29 @@ export function CampusEnquirySection({
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-white text-sm font-extrabold">Our Response Time</span>
-                  <span className="block mt-1 text-[#4d66ff] text-base font-extrabold">Within 24 Hours</span>
+                  <span className="block text-white text-sm font-extrabold">Proposal Turnaround</span>
+                  <span className="block mt-0.5 text-[#8aa2ff] text-base font-extrabold">Within 24 Hours</span>
                 </div>
               </div>
             </div>
 
-            <div className="relative mt-5 h-[180px] sm:h-[210px] w-full max-w-[500px]">
-              <Image src="/gallery/campus.png" alt="Codegnan Labs campus" fill className="object-contain object-left-bottom" sizes="500px" />
+            {/* Student Sharing Banner */}
+            <div className="mt-8 rounded-2xl bg-white/10 border border-white/15 p-5">
+              <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#fbbf24] mb-1.5">
+                <MessageCircle className="w-4 h-4" />
+                <span>Are you a student or club lead?</span>
+              </div>
+              <p className="text-xs text-[#cbd5e1] mb-3">
+                Want Codegnan Labs on your campus? Share this page directly with your HOD or Placement Officer on WhatsApp.
+              </p>
+              <button
+                type="button"
+                onClick={shareViaWhatsApp}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#25d366] hover:bg-[#20bd5a] text-black text-xs font-black uppercase tracking-wider rounded-lg transition-all"
+              >
+                <Share2 className="w-3.5 h-3.5" />
+                <span>Share with HOD on WhatsApp</span>
+              </button>
             </div>
           </div>
 
@@ -118,193 +165,173 @@ export function CampusEnquirySection({
           <div>
             <div className="rounded-[24px] bg-[#fbfbff] p-6 sm:p-8 lg:p-10 text-[#0d1033] shadow-[0_18px_70px_rgba(0,0,0,0.28)] border border-white/70">
               {submitted ? (
-                <div className="py-12 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-[#e6fcf5] text-[#0ca678] flex items-center justify-center mx-auto shadow-md">
-                    <CheckCircle2 className="w-8 h-8" />
+                <div className="py-12 text-center animate-in fade-in">
+                  <div className="w-16 h-16 bg-[#dcfce7] rounded-full flex items-center justify-center mx-auto mb-5 text-[#16a34a]">
+                    <CheckCircle2 className="w-9 h-9" />
                   </div>
-                  <h3 className="text-2xl font-black text-[#0d1033]">
-                    Campus Request Received!
+                  <h3 className="text-2xl font-black text-[#0d1033] mb-2">
+                    Enquiry Received!
                   </h3>
-                  <p className="text-sm text-[#606482] max-w-[420px] mx-auto leading-relaxed">
-                    Thank you for inviting Codegnan Labs. Our academic partnerships director will get in touch with you shortly to schedule dates and finalize curriculum.
+                  <p className="text-sm text-[#606482] max-w-[400px] mx-auto mb-6">
+                    Our academic partnership team will review your requirements and reach out within 24 hours with a customized proposal.
                   </p>
                   <button
                     type="button"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({
-                        collegeName: "",
-                        city: "",
-                        contactPerson: "",
-                        designation: "",
-                        phone: "",
-                        email: "",
-                        expectedStudentCount: "",
-                        programInterest: "",
-                        preferredDuration: "",
-                        preferredDate: "",
-                        notes: "",
-                      });
-                    }}
-                    className="mt-4 px-6 py-2.5 bg-[#304ffe] text-white text-xs font-bold uppercase tracking-wider rounded-lg"
+                    onClick={() => setSubmitted(false)}
+                    className="px-6 py-2.5 bg-[#304ffe] text-white text-xs font-bold rounded-lg uppercase tracking-wider"
                   >
                     Submit Another Request
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {recommenderDetails && (
+                    <div className="p-3.5 rounded-xl bg-[#f0f4ff] border border-[#304ffe]/30 text-xs text-[#0d1033] mb-2">
+                      <strong className="text-[#304ffe] block font-bold mb-0.5">
+                        Prefilled from Campus Planner:
+                      </strong>
+                      <span>{recommenderDetails.recommendationTitle}</span>
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* College Name */}
                     <div>
-                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        College / Institute Name <span className="text-red-500">*</span>
+                      <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
+                        College / University Name *
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.collegeName}
                         onChange={(e) => setFormData({ ...formData, collegeName: e.target.value })}
-                        placeholder="Enter your college or institute name"
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                        placeholder="e.g. MLR Institute of Technology"
+                        className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#8892b0] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       />
                     </div>
 
-                    {/* City */}
                     <div>
-                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        City <span className="text-red-500">*</span>
+                      <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
+                        City / Location *
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.city}
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                        placeholder="e.g., Vijayawada"
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                        placeholder="e.g. Hyderabad"
+                        className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#8892b0] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Your Name */}
                     <div>
-                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        Your Name <span className="text-red-500">*</span>
+                      <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
+                        Contact Person Name *
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.contactPerson}
                         onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
-                        placeholder="Enter your full name"
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                        placeholder="e.g. Dr. K. Srinivas"
+                        className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#8892b0] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       />
                     </div>
 
-                    {/* Contact Number */}
                     <div>
-                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        Contact Number <span className="text-red-500">*</span>
+                      <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
+                        Designation *
                       </label>
                       <input
-                        type="tel"
+                        type="text"
                         required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 81212 89993"
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                        value={formData.designation}
+                        onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
+                        placeholder="e.g. HOD / TPO / Club Lead"
+                        className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#8892b0] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       />
                     </div>
+                  </div>
 
-                    {/* Official Email */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        Official Email ID <span className="text-red-500">*</span>
+                      <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
+                        Official Email Address *
                       </label>
                       <input
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="your.email@college.edu"
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                        placeholder="name@college.edu"
+                        className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#8892b0] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+91 98765 43210"
+                        className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#8892b0] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Designation */}
                     <div>
-                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        Your Designation <span className="text-red-500">*</span>
-                      </label>
-                      <select
-                        required
-                        value={formData.designation}
-                        onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
-                      >
-                        <option value="" disabled>Select your designation</option>
-                        <option value="Principal / Dean">Principal / Dean</option>
-                        <option value="HOD / Department Head">HOD / Department Head</option>
-                        <option value="Training &amp; Placement Officer (TPO)">Training &amp; Placement Officer (TPO)</option>
-                        <option value="Faculty Coordinator">Faculty Coordinator</option>
-                        <option value="Student Club Lead / President">Student Club Lead / President</option>
-                      </select>
-                    </div>
-
-                    {/* Expected Student Count */}
-                    <div>
-                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        Expected Student Count <span className="text-red-500">*</span>
+                      <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
+                        Expected Student Count *
                       </label>
                       <select
                         required
                         value={formData.expectedStudentCount}
                         onChange={(e) => setFormData({ ...formData, expectedStudentCount: e.target.value })}
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                        className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       >
-                        <option value="" disabled>Select an approximate count</option>
-                        <option value="Up to 50 Students">Up to 50 Students</option>
-                        <option value="50 - 100 Students">50 - 100 Students</option>
-                        <option value="100 - 250 Students">100 - 250 Students</option>
-                        <option value="250 - 500 Students">250 - 500 Students</option>
-                        <option value="500+ Students">500+ Students</option>
+                        <option value="">Select Student Count</option>
+                        <option value="<50 Students">&lt; 50 Students</option>
+                        <option value="50–100 Students">50–100 Students</option>
+                        <option value="100–300 Students">100–300 Students</option>
+                        <option value="300+ Students">300+ Students</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
+                        Program Interest *
+                      </label>
+                      <select
+                        required
+                        value={formData.programInterest}
+                        onChange={(e) => setFormData({ ...formData, programInterest: e.target.value })}
+                        className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                      >
+                        <option value="">Select Format</option>
+                        <option value="Hands-on Workshop (2–6 Hours)">Hands-on Workshop (2–6 Hours)</option>
+                        <option value="Intensive Bootcamp (1–5 Days)">Intensive Bootcamp (1–5 Days)</option>
+                        <option value="Campus Hackathon (24–48 Hours)">Campus Hackathon (24–48 Hours)</option>
+                        <option value="Multiple / Customized Tracks">Multiple / Customized Tracks</option>
                       </select>
                     </div>
                   </div>
 
-                  {/* Preferred Program Type */}
                   <div>
-                    <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                      Preferred Program Type <span className="text-red-500">*</span>
-                    </label>
-                    <select
-                      value={formData.programInterest}
-                      onChange={(e) => setFormData({ ...formData, programInterest: e.target.value })}
-                      required
-                      className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
-                    >
-                      <option value="" disabled>Select a program type</option>
-                      <option value="Tech Workshop (2-6 Hours)">Tech Workshop (2-6 Hours)</option>
-                      <option value="Intensive Bootcamp (1-5 Days)">Intensive Bootcamp (1-5 Days)</option>
-                      <option value="Campus Hackathon (24-48 Hours)">Campus Hackathon (24-48 Hours)</option>
-                      <option value="College Tech Fest Partner">College Tech Fest Partner</option>
-                      <option value="Multiple / Customized Tracks">Multiple / Customized Tracks</option>
-                    </select>
-                  </div>
-
-                  {/* Notes / Special Requests */}
-                  <div>
-                    <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                      Additional Requirements or Message (Optional)
+                    <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
+                      Additional Requirements or Goals (Optional)
                     </label>
                     <textarea
                       rows={3}
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      placeholder="Tell us more about your expectations, number of students, venue, or any other details..."
-                      className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all resize-none"
+                      placeholder="Share your student year, specific tech interests, or tentative dates..."
+                      className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#8892b0] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all resize-none"
                     />
                   </div>
 
@@ -314,11 +341,11 @@ export function CampusEnquirySection({
                     className="w-full py-4 bg-[#304ffe] hover:bg-[#253bdf] disabled:bg-gray-400 text-white font-bold text-xs uppercase tracking-[0.08em] rounded-xl shadow-[0_8px_20px_rgba(48,79,254,0.3)] transition-all flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
-                    <span>{submitting ? "Submitting..." : "SEND REQUEST"}</span>
+                    <span>{submitting ? "Submitting..." : "REQUEST TAILORED CAMPUS PROPOSAL"}</span>
                   </button>
-                  <p className="flex items-center justify-center gap-2 text-[11px] text-[#697390]">
-                    <span aria-hidden="true">🔒</span>
-                    Your information is secure and will only be used to contact you.
+
+                  <p className="text-center text-[11px] text-[#697390]">
+                    🔒 Official inquiries only. Tailored blueprint provided within 24 hours.
                   </p>
                 </form>
               )}

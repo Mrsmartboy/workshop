@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -78,23 +79,28 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-[14px] text-[#0d1033]">
               <li>
-                <a href="#experiences" className="hover:text-[#304ffe] transition-colors">
+                <a href="/#experiences" className="hover:text-[#304ffe] transition-colors">
                   Hands-on Workshops
                 </a>
               </li>
               <li>
-                <a href="#experiences" className="hover:text-[#304ffe] transition-colors">
+                <a href="/#experiences" className="hover:text-[#304ffe] transition-colors">
                   Intensive Bootcamps
                 </a>
               </li>
               <li>
-                <a href="#experiences" className="hover:text-[#304ffe] transition-colors">
+                <a href="/labs/hackathons" className="hover:text-[#304ffe] transition-colors">
                   Campus Hackathons
                 </a>
               </li>
               <li>
-                <a href="#for-colleges" className="hover:text-[#304ffe] transition-colors">
-                  College Tech Fests
+                <a href="/labs/colleges" className="hover:text-[#304ffe] transition-colors">
+                  For Colleges (B2B Blueprint)
+                </a>
+              </li>
+              <li>
+                <a href="/#campus-recommender" className="hover:text-[#304ffe] transition-colors font-semibold text-[#304ffe]">
+                  Design Your Campus Lab
                 </a>
               </li>
             </ul>
@@ -140,14 +146,14 @@ export function Footer() {
               Campus Partnerships
             </h4>
             <p className="text-[14px] text-[#606482] leading-relaxed mb-3">
-              Codegnan IT Solutions, Lakshmi Basaveswara Residency, Vijayawada, AP, India.
+              Prasad Naidu Complex, P.B. Siddhartha Bus Stop, Moghalrajpuram, Vijayawada, Andhra Pradesh - 520010, India. Landmark: Near PB Siddhartha College of Arts and Science.
             </p>
             <div className="space-y-1 text-xs">
               <a
-                href="mailto:cto@codegnan.com"
+                href="mailto:labs@codegnan.com"
                 className="block font-semibold text-[#304ffe] hover:underline"
               >
-                cto@codegnan.com
+                labs@codegnan.com
               </a>
               <a href="tel:+918121289993" className="block font-semibold text-[#0d1033] hover:text-[#304ffe] transition-colors">
                 +91 81212 89993
@@ -160,13 +166,13 @@ export function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#606482]">
           <span>© 2026 Codegnan Labs • A Codegnan Colleges Initiative. All rights reserved.</span>
           <div className="flex items-center gap-6">
-            <a href="https://codegnan.com/privacy-policy/" className="hover:text-[#304ffe] transition-colors">
+            <Link href="/privacy-policy" className="hover:text-[#304ffe] transition-colors">
               Privacy Policy
-            </a>
-            <a href="https://codegnan.com/terms-conditions/" className="hover:text-[#304ffe] transition-colors">
+            </Link>
+            <Link href="/terms-of-service" className="hover:text-[#304ffe] transition-colors">
               Terms of Service
-            </a>
-            <a href="#campus-enquiry" className="text-[#304ffe] font-bold hover:underline">
+            </Link>
+            <a href="/#campus-enquiry" className="text-[#304ffe] font-bold hover:underline">
               Bring Codegnan to Your Campus &rarr;
             </a>
           </div>

@@ -7,6 +7,9 @@ export interface Course {
   duration: string;
   outcome: string;
   type: "workshop" | "bootcamp" | "hackathon";
+  verb: "EXPLORE" | "BUILD" | "COMPETE";
+  ctaText: string;
+  idealFor: string;
 }
 
 export interface EventItem {
@@ -25,11 +28,22 @@ export interface EventItem {
 export interface TechTrack {
   id: string;
   name: string;
+  outcomeTitle: string;
+  category: string;
   tag: string;
+  tagColor?: string;
+  chipColor?: string;
   description: string;
   iconName: string;
   badgeColor: string;
+  duration: string;
+  level: string;
   topics: string[];
+  image?: string;
+  isFlagship?: boolean;
+  whoItIsFor: string;
+  whatStudentsBuild: string;
+  whatTheyLeaveWith: string;
 }
 
 export interface CollegeMatrixItem {
@@ -82,4 +96,45 @@ export interface CampusEnquiryFormData {
   preferredDuration: string;
   preferredDate: string;
   notes?: string;
+}
+
+export interface CohortStage {
+  year: "I Year" | "II Year" | "III Year" | "IV Year";
+  verb: "DISCOVER" | "EXPLORE" | "BUILD" | "SHOWCASE";
+  tagline: string;
+  description: string;
+  recommendedExperiences: {
+    title: string;
+    format: "Workshop" | "Bootcamp" | "Hackathon";
+    duration: string;
+    skills: string[];
+  }[];
+}
+
+export interface StudentProject {
+  id: string;
+  title: string;
+  builtDuring: string;
+  format: "Bootcamp" | "Workshop" | "Hackathon";
+  description: string;
+  team: string;
+  techStack: string[];
+  githubUrl?: string;
+  demoUrl?: string;
+  outputEvidence: string;
+  image?: string;
+}
+
+export interface CampusStory {
+  id: string;
+  collegeName: string;
+  city: string;
+  programType: string;
+  studentCount: number;
+  duration: string;
+  whatStudentsBuilt: string;
+  image: string;
+  quote?: string;
+  quoteAuthor?: string;
+  quoteRole?: string;
 }

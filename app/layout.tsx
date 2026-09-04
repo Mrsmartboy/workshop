@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SmoothScrollProvider } from "@/components/ui/SmoothScrollProvider";
 
 export const metadata: Metadata = {
   title: "Codegnan Labs — Campus Innovation & Technology Experiences",
@@ -19,13 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/codegnan_logo.webp" type="image/webp" />
-        <link rel="shortcut icon" href="/codegnan_logo.webp" type="image/webp" />
-        <link rel="apple-touch-icon" href="/codegnan_logo.webp" />
-      </head>
       <body className="antialiased bg-white text-[#0d1033] selection:bg-[#304ffe] selection:text-white">
-        {children}
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );
