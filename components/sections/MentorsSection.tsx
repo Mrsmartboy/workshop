@@ -146,7 +146,7 @@ export function MentorsSection() {
                     loop
                     autoPlay
                     playsInline
-                    aria-label="Students engaging in a Codegnan workshop"
+                    aria-label="Students building in a Codegnan workshop"
                     className="absolute left-1/2 top-1/2 h-[90%] w-[184%] -translate-x-1/2 -translate-y-1/2 -rotate-90 object-cover object-center transition-transform duration-500"
                   />
                 </div>

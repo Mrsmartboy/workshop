@@ -13,9 +13,9 @@ export function Navbar({
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#f0f1f7]">
-      <div className="max-w-[1200px] mx-auto px-6 sm:px-8 h-[88px] sm:h-[94px] flex items-center justify-between">
+      <div className="max-w-[1320px] mx-auto px-5 sm:px-6 lg:px-8 h-[80px] sm:h-[84px] flex items-center justify-between gap-6">
         {/* Left: Codegnan Brand Logo */}
-        <div className="flex items-center gap-8 lg:gap-10">
+        <div className="flex min-w-0 items-center gap-7 lg:gap-9">
           <a
             href="/"
             className="flex items-center group py-1"
@@ -24,14 +24,14 @@ export function Navbar({
             <img
               src="/codegnan_lab.png"
               alt="Codegnan Lab"
-              className="h-12 sm:h-14 lg:h-[60px] w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-11 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-[14px] font-semibold text-[#606482]">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-6 whitespace-nowrap text-[13px] xl:text-[14px] font-semibold text-[#606482]">
             <a
-              href="#"
+              href="/"
               className="text-[#304ffe] font-bold transition-colors hover:text-[#253bdf]"
             >
               Home
@@ -89,11 +89,12 @@ export function Navbar({
         </div>
 
         {/* Right Action Items: Primary Campus CTA Button */}
-        <div className="flex items-center gap-4">
+        <div className="flex shrink-0 items-center gap-4">
           <button
             type="button"
             onClick={() => scrollToSection("campus-enquiry")}
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-[#304ffe] hover:bg-[#253bdf] text-white text-[12px] font-bold uppercase tracking-[0.08em] rounded-[6px] shadow-[0_6px_18px_rgba(48,79,254,0.25)] transition-all hover:-translate-y-0.5"
+            aria-label="Bring Codegnan to your campus"
+            className="hidden lg:inline-flex min-h-11 items-center justify-center gap-2 px-4 xl:px-5 py-2.5 bg-[#304ffe] hover:bg-[#253bdf] text-white text-[11px] xl:text-[12px] font-bold uppercase tracking-[0.07em] rounded-lg shadow-[0_6px_18px_rgba(48,79,254,0.25)] transition-all hover:-translate-y-0.5"
           >
             <Building2 className="w-3.5 h-3.5" />
             <span>BRING TO CAMPUS</span>
@@ -119,7 +120,7 @@ export function Navbar({
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-[#f0f1f7] bg-white px-6 py-5 space-y-3.5 shadow-lg">
           <a
-            href="#"
+            href="/"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm font-bold text-[#304ffe]"
           >
@@ -190,7 +191,7 @@ export function Navbar({
             className="w-full py-3 bg-[#304ffe] text-white text-xs font-bold uppercase tracking-wider rounded-md mt-2 flex items-center justify-center gap-2"
           >
             <Building2 className="w-4 h-4" />
-            <span>BRING TO YOUR CAMPUS</span>
+            <span>BRING CODEGNAN TO YOUR CAMPUS</span>
           </button>
         </div>
       )}

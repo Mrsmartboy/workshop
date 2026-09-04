@@ -12,7 +12,6 @@ import {
   Users,
   Building2,
   Trophy,
-  Globe,
   Award,
   Star,
 } from "lucide-react";
@@ -111,72 +110,29 @@ export function CertificationSection({
               </div>
             </div>
 
-            {/* 4 Stats White Card (Under Certificate) */}
+            {/* Labs delivery metrics stay primary; placement claims are kept below as context. */}
             <div className="w-full max-w-[620px] mt-6 rounded-2xl bg-white border border-[#e2e8f0] p-4 sm:p-5 shadow-xs">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
-                {/* Stat 1 */}
-                <div className="flex items-center gap-3 px-1 pt-2 sm:pt-0">
-                  <div className="w-10 h-10 rounded-xl bg-[#f5f0ff] text-[#9333ea] flex items-center justify-center shrink-0">
-                    <Users className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <strong className="block text-[17px] font-black text-[#0d1033] leading-none">
-                      50,000+
-                    </strong>
-                    <span className="text-[11px] text-[#64748b] mt-1 block">
-                      Students Certified
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stat 2 */}
-                <div className="flex items-center gap-3 px-1 sm:pl-4 pt-2 sm:pt-0">
-                  <div className="w-10 h-10 rounded-xl bg-[#ecfdf5] text-[#16a34a] flex items-center justify-center shrink-0">
-                    <Building2 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <strong className="block text-[17px] font-black text-[#0d1033] leading-none">
-                      850+
-                    </strong>
-                    <span className="text-[11px] text-[#64748b] mt-1 block">
-                      Employer Network
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stat 3 */}
-                <div className="flex items-center gap-3 px-1 sm:pl-4 pt-2 sm:pt-0">
-                  <div className="w-10 h-10 rounded-xl bg-[#fff7ed] text-[#ea580c] flex items-center justify-center shrink-0">
-                    <Trophy className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <strong className="block text-[17px] font-black text-[#0d1033] leading-none">
-                      95%
-                    </strong>
-                    <span className="text-[11px] text-[#64748b] mt-1 block">
-                      Reported Career Outcomes
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stat 4 */}
-                <div className="flex items-center gap-3 px-1 sm:pl-4 pt-2 sm:pt-0">
-                  <div className="w-10 h-10 rounded-xl bg-[#eff6ff] text-[#2563eb] flex items-center justify-center shrink-0">
-                    <Globe className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <strong className="block text-[17px] font-black text-[#0d1033] leading-none">
-                      Trusted
-                    </strong>
-                    <span className="text-[11px] text-[#64748b] mt-1 block">
-                      By Colleges Nationwide
-                    </span>
-                  </div>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+                {[
+                  { icon: Users, value: "50,000+", label: "Students Engaged", color: "text-[#9333ea]" },
+                  { icon: Building2, value: "250+", label: "Campus Workshops", color: "text-[#2563eb]" },
+                  { icon: Trophy, value: "100+", label: "Hackathons", color: "text-[#ea580c]" },
+                ].map((metric) => {
+                  const MetricIcon = metric.icon;
+                  return (
+                    <div key={metric.label} className="flex items-center gap-3 px-1 pt-2 sm:pt-0 sm:pl-4 first:sm:pl-1">
+                      <MetricIcon className={`h-8 w-8 shrink-0 ${metric.color}`} />
+                      <div>
+                        <strong className="block text-[17px] font-black leading-none text-[#0d1033]">{metric.value}</strong>
+                        <span className="mt-1 block text-[11px] text-[#64748b]">{metric.label}</span>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-            <p className="mt-3 w-full max-w-[620px] text-[10px] leading-relaxed text-white/65">
-              * Codegnan-wide figures shown for context. Survey samples, reporting period, and placement methodology are available from the Campus Partnerships Desk; results are not a guarantee for an individual cohort.
+            <p className="mt-3 w-full max-w-[620px] border-t border-[#e7ebf4] pt-3 text-[10.5px] leading-relaxed text-[#64748b]">
+              <span className="font-bold text-[#475569]">Data note:</span> The 850+ employer network and 95% reported career outcomes are Codegnan-wide references. Cohort results vary; survey details and placement methodology are available from the Campus Partnerships Desk.
             </p>
           </div>
 

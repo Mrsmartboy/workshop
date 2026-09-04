@@ -17,7 +17,7 @@ export function CampusEnquirySection({
     designation: "",
     phone: "",
     email: "",
-    expectedStudentCount: "100 - 250 Students",
+    expectedStudentCount: "",
     programInterest: "",
     preferredDuration: "",
     preferredDate: "",
@@ -29,7 +29,16 @@ export function CampusEnquirySection({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.collegeName || !formData.contactPerson || !formData.phone || !formData.email) {
+    if (
+      !formData.collegeName ||
+      !formData.city ||
+      !formData.contactPerson ||
+      !formData.phone ||
+      !formData.email ||
+      !formData.designation ||
+      !formData.expectedStudentCount ||
+      !formData.programInterest
+    ) {
       triggerToast("Please fill in all mandatory fields (*).");
       return;
     }
@@ -130,7 +139,7 @@ export function CampusEnquirySection({
                         designation: "",
                         phone: "",
                         email: "",
-                        expectedStudentCount: "100 - 250 Students",
+                        expectedStudentCount: "",
                         programInterest: "",
                         preferredDuration: "",
                         preferredDate: "",
@@ -163,6 +172,23 @@ export function CampusEnquirySection({
                     {/* City */}
                     <div>
                       <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
+                        City <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.city}
+                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                        placeholder="e.g., Vijayawada"
+                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Your Name */}
+                    <div>
+                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
                         Your Name <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -174,9 +200,7 @@ export function CampusEnquirySection({
                         className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       />
                     </div>
-                  </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Contact Number */}
                     <div>
                       <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
@@ -229,74 +253,45 @@ export function CampusEnquirySection({
                       </select>
                     </div>
 
-                    {/* Department */}
+                    {/* Expected Student Count */}
                     <div>
                       <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        Department
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.city}
-                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                        placeholder="Select department"
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Preferred Program Type */}
-                    <div>
-                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        Preferred Program Type <span className="text-red-500">*</span>
+                        Expected Student Count <span className="text-red-500">*</span>
                       </label>
                       <select
-                        value={formData.programInterest}
-                        onChange={(e) => setFormData({ ...formData, programInterest: e.target.value })}
                         required
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                        value={formData.expectedStudentCount}
+                        onChange={(e) => setFormData({ ...formData, expectedStudentCount: e.target.value })}
+                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       >
-                        <option value="" disabled>Select a program type</option>
-                        <option value="Tech Workshop (2-6 Hours)">Tech Workshop (2-6 Hours)</option>
-                        <option value="Intensive Bootcamp (1-5 Days)">Intensive Bootcamp (1-5 Days)</option>
-                        <option value="Campus Hackathon (24-48 Hours)">Campus Hackathon (24-48 Hours)</option>
-                        <option value="College Tech Fest Partner">College Tech Fest Partner</option>
-                        <option value="Multiple / Customized Tracks">Multiple / Customized Tracks</option>
-                      </select>
-                    </div>
-
-                    {/* Preferred Duration */}
-                    <div>
-                      <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                        Preferred Duration
-                      </label>
-                      <select
-                        value={formData.preferredDuration}
-                        onChange={(e) => setFormData({ ...formData, preferredDuration: e.target.value })}
-                        className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
-                      >
-                        <option value="">Select duration</option>
-                        <option>2 to 6 Hours</option>
-                        <option>1 to 5 Days</option>
-                        <option>24 to 48 Hours</option>
-                        <option>Custom (1 to 3 Days)</option>
+                        <option value="" disabled>Select an approximate count</option>
+                        <option value="Up to 50 Students">Up to 50 Students</option>
+                        <option value="50 - 100 Students">50 - 100 Students</option>
+                        <option value="100 - 250 Students">100 - 250 Students</option>
+                        <option value="250 - 500 Students">250 - 500 Students</option>
+                        <option value="500+ Students">500+ Students</option>
                       </select>
                     </div>
                   </div>
 
-                  {/* Preferred Date */}
+                  {/* Preferred Program Type */}
                   <div>
                     <label className="block text-[13px] font-bold text-[#0d1033] mb-2">
-                      Preferred Month / Date to Conduct Program
+                      Preferred Program Type <span className="text-red-500">*</span>
                     </label>
-                    <input
-                      type="date"
-                      value={formData.preferredDate}
-                      onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                      aria-label="Preferred date to conduct program"
-                      onClick={(e) => e.currentTarget.showPicker?.()}
-                      className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
-                    />
+                    <select
+                      value={formData.programInterest}
+                      onChange={(e) => setFormData({ ...formData, programInterest: e.target.value })}
+                      required
+                      className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
+                    >
+                      <option value="" disabled>Select a program type</option>
+                      <option value="Tech Workshop (2-6 Hours)">Tech Workshop (2-6 Hours)</option>
+                      <option value="Intensive Bootcamp (1-5 Days)">Intensive Bootcamp (1-5 Days)</option>
+                      <option value="Campus Hackathon (24-48 Hours)">Campus Hackathon (24-48 Hours)</option>
+                      <option value="College Tech Fest Partner">College Tech Fest Partner</option>
+                      <option value="Multiple / Customized Tracks">Multiple / Customized Tracks</option>
+                    </select>
                   </div>
 
                   {/* Notes / Special Requests */}

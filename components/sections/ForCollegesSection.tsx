@@ -343,6 +343,28 @@ export function ForCollegesSection({
         <p className="relative z-10 mt-3 text-[11px] text-[#64748b]">
           Feedback source: <a href="https://codegnan.com/full-stack-developer-course-in-visakhapatnam/" target="_blank" rel="noreferrer" className="font-semibold text-[#304ffe] hover:underline">Codegnan’s published student reviews</a>. Metrics are Codegnan-wide; survey samples and placement methodology are available from the Campus Partnerships Desk.
         </p>
+        <div id="past-labs" className="relative z-10 mt-8 rounded-[20px] border border-[#dfe6f5] bg-white p-5 sm:p-6 shadow-[0_6px_18px_rgba(48,79,254,0.04)]">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#304ffe]">Past Labs</span>
+              <h3 className="mt-1 text-[20px] font-extrabold text-[#0d1033]">Real workshop moments from the field</h3>
+              <p className="mt-1 text-[12px] text-[#64748b]">A snapshot of students learning in live campus sessions. Institution names are omitted until partner approvals are on file.</p>
+            </div>
+            <a href="/gallery" className="shrink-0 text-[12px] font-bold text-[#304ffe] hover:underline">View the full gallery →</a>
+          </div>
+          <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {[
+              { src: "/gallery/DSC00239.JPG", alt: "Students working on laptops during a Codegnan workshop", label: "Hands-on lab" },
+              { src: "/gallery/DSC00249.JPG", alt: "A Codegnan mentor speaking to a full student workshop", label: "Mentor-led session" },
+              { src: "/gallery/DSC00257.JPG", alt: "Students collaborating during a campus learning session", label: "Collaborative build" },
+            ].map((photo) => (
+              <figure key={photo.src} className="overflow-hidden rounded-xl border border-[#e5eaf4] bg-[#f8faff]">
+                <Image src={photo.src} alt={photo.alt} width={720} height={480} className="h-40 w-full object-cover" />
+                <figcaption className="px-3 py-2 text-[11px] font-bold text-[#30416f]">{photo.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

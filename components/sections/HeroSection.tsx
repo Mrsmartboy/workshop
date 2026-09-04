@@ -96,7 +96,7 @@ export function HeroSection({
               {/* Hero Video Card */}
               <div className="relative rounded-[28px] overflow-hidden shadow-[0_24px_60px_rgba(20,24,68,0.16)] border-2 border-white/80 bg-black">
                 <video
-                  src="/gallery/Build-Intelligent-RAG-Systems-WORKSHOP.mp4"
+                  src="/gallery/Codegnan_Labs_Workshop_Overview_With_Logo.mp4"
                   autoPlay
                   muted
                   loop
