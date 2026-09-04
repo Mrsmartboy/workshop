@@ -428,7 +428,7 @@ export const MENTORS: Mentor[] = [
     organization: "Enterprise Cloud Specialist",
     experience: "8+ Yrs Full-Stack Engineering",
     category: "Full-Stack & Cloud",
-    avatarUrl: "/gallery/joseph_mernstackdeveloper.png",
+    avatarUrl: "/gallery/joseph_mernstack.png",
     bio: "Passionate about high-concurrency cloud backends, microservices design, modern React/Next.js platforms, container orchestration with Kubernetes, and zero-downtime CI/CD.",
     expertise: [
       "Next.js & React 19",

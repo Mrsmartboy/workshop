@@ -241,7 +241,7 @@ export function MentorsSection() {
                     </span>
                     <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
                       <img
-                        src="/gallery/joseph_mernstackdeveloper.png"
+                        src="/gallery/joseph_mernstack.png"
                         alt="Joseph - MERN Stack Developer at Codegnan"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
