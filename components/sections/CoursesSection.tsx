@@ -41,14 +41,14 @@ export function CoursesSection({
 
 
         {/* 3 Experience Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {THREE_EXPERIENCES.map((exp) => (
             <div
               key={exp.id}
-              className="course-card rounded-[24px] bg-white border border-[#eaedf6] overflow-hidden shadow-[0_12px_36px_rgba(20,24,68,0.06)] flex flex-col group hover:border-[#304ffe]/40 transition-all duration-300"
+              className="course-card rounded-[24px] bg-white border border-[#eaedf6] overflow-hidden shadow-[0_12px_36px_rgba(20,24,68,0.06)] flex flex-col md:flex-row lg:flex-col group hover:border-[#304ffe]/40 transition-all duration-300"
             >
-              {/* Top Banner Video */}
-              <div className="h-[210px] sm:h-[220px] overflow-hidden bg-black relative">
+              {/* Top / Left Banner Video */}
+              <div className="w-full md:w-[280px] lg:w-full h-[210px] md:h-auto lg:h-[220px] shrink-0 overflow-hidden bg-black relative">
                 {exp.type === "workshop" && (
                   <video
                     src="/gallery/computer_vision_workshop.mp4"
@@ -93,7 +93,7 @@ export function CoursesSection({
               </div>
 
               {/* Card Body */}
-              <div className="p-7 flex-1 flex flex-col justify-between">
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="text-[11px] font-extrabold uppercase tracking-wider text-[#304ffe] mb-1.5">
                     {exp.subtitle}

@@ -21,17 +21,18 @@ export function MentorsSection() {
                 <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4">
                   <strong className="font-bold text-[#0f172a]">Executive Leadership</strong> at Codegnan
                 </h3>
-                <div className="grid grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-2 gap-3.5 max-w-[540px] mx-auto lg:mx-0">
                   {/* Madhu Parvathaneni - CTO */}
                   <div className="rounded-[14px] bg-white border border-[#304ffe]/30 overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
                     <span className="absolute top-1.5 right-1.5 z-10 bg-[#304ffe] text-white text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-xs">
                       CTO
                     </span>
-                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
+                    <div className="w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[4/3] lg:aspect-auto lg:h-[150px] min-h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
                         src="/gallery/madhuparvathaneni_cto.png"
                         alt="Madhu Parvathaneni - CTO at Codegnan"
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        style={{ objectPosition: "center 20%" }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
@@ -50,11 +51,12 @@ export function MentorsSection() {
                     <span className="absolute top-1.5 right-1.5 z-10 bg-[#7c3aed] text-white text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-xs">
                       CMO
                     </span>
-                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
+                    <div className="w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[4/3] lg:aspect-auto lg:h-[150px] min-h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
                         src="/gallery/saketh K-cmo.png"
                         alt="Saketh K - CMO at Codegnan"
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        style={{ objectPosition: "center 18%" }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
@@ -75,23 +77,24 @@ export function MentorsSection() {
 
               {/* Bottom-Left Group: Product Developers & Core Engineers */}
               <div>
-                <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4">
+                <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4 text-center lg:text-left">
                   Learn directly from{" "}
                   <strong className="font-bold text-[#0f172a]">
                     Core Engineers &amp; Mentors
                   </strong>
                 </h3>
-                <div className="grid grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-2 gap-3.5 max-w-[540px] mx-auto lg:mx-0">
                   {/* Kesava Datta - Full Stack Engineer */}
                   <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
                     <span className="absolute top-1.5 right-1.5 z-10 bg-[#059669] text-white text-[8.5px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
                       FULL STACK
                     </span>
-                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
+                    <div className="w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[4/3] lg:aspect-auto lg:h-[150px] min-h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
                         src="/gallery/kesavadatta_fullstackengineer.png"
                         alt="Kesava Datta - Full Stack Engineer, Top MNC"
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        style={{ objectPosition: "center 18%" }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
@@ -111,11 +114,12 @@ export function MentorsSection() {
                     <span className="absolute top-1.5 right-1.5 z-10 bg-[#ea580c] text-white text-[8.5px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
                       AI ENGINEER
                     </span>
-                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
+                    <div className="w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[4/3] lg:aspect-auto lg:h-[150px] min-h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
                         src="/gallery/supraja_ai_engineer.jpeg"
                         alt="Supraja - AI Engineer at Codegnan"
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        style={{ objectPosition: "center 18%" }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
@@ -167,23 +171,24 @@ export function MentorsSection() {
             <div className="lg:col-span-4 flex flex-col justify-between gap-10">
               {/* Top-Right Group: Career Coaches */}
               <div>
-                <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4">
+                <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4 text-center lg:text-left">
                   <strong className="font-bold text-[#0f172a]">
                     Career Coaches
                   </strong>{" "}
                   help you land your first job
                 </h3>
-                <div className="grid grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-2 gap-3.5 max-w-[540px] mx-auto lg:mx-0">
                   {/* Eswar K - Senior Agentic AI Engineer */}
                   <div className="rounded-[14px] bg-white border border-[#e2e8f0] overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
                     <span className="absolute top-1.5 right-1.5 z-10 bg-[#304ffe] text-white text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
                       AGENTIC AI
                     </span>
-                    <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
+                    <div className="w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[4/3] lg:aspect-auto lg:h-[150px] min-h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
                         src="/gallery/eswark-Senior Agentic AI Engineer.png"
                         alt="Eswar K - Senior Agentic AI Engineer"
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        style={{ objectPosition: "center 18%" }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
@@ -202,11 +207,12 @@ export function MentorsSection() {
                     <span className="absolute top-1.5 right-1.5 z-10 bg-[#304ffe] text-white text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
                       SENIOR FULL STACK
                     </span>
-                    <div className="w-full h-[125px] sm:h-[135px] overflow-hidden bg-[#f1f5f9]">
+                    <div className="w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[4/3] lg:aspect-auto lg:h-[150px] min-h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
                         src="/gallery/sivaram_fullStackEngineer.png"
                         alt="Sivaram - Senior Full Stack Engineer at Codegnan"
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        style={{ objectPosition: "center 22%" }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
@@ -227,23 +233,24 @@ export function MentorsSection() {
 
               {/* Bottom-Right Group: Masterclasses & Agentic AI */}
               <div>
-                <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4">
+                <h3 className="text-[14px] sm:text-[15px] text-[#1e293b] mb-4 text-center lg:text-left">
                   Gain expert insights from{" "}
                   <strong className="font-bold text-[#0f172a]">
                     Agentic AI &amp; Masterclasses
                   </strong>
                 </h3>
-                <div className="grid grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-2 gap-3.5 max-w-[540px] mx-auto lg:mx-0">
                   {/* Joseph - MERN Stack Developer */}
                   <div className="rounded-[14px] bg-white border border-[#304ffe]/30 overflow-hidden shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow relative">
                     <span className="absolute top-1.5 right-1.5 z-10 bg-[#304ffe] text-white text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
                       MERN STACK
                     </span>
-                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
+                    <div className="w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[4/3] lg:aspect-auto lg:h-[150px] min-h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
                         src="/gallery/joseph_mernstack.png"
                         alt="Joseph - MERN Stack Developer at Codegnan"
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        style={{ objectPosition: "center 18%" }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
@@ -263,11 +270,12 @@ export function MentorsSection() {
                     <span className="absolute top-1.5 right-1.5 z-10 bg-[#7c3aed] text-white text-[8px] font-black uppercase px-1.5 py-0.5 rounded-full shadow-xs">
                       AI ENGINEER
                     </span>
-                    <div className="w-full h-[140px] sm:h-[150px] overflow-hidden bg-[#f1f5f9]">
+                    <div className="w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[4/3] lg:aspect-auto lg:h-[150px] min-h-[135px] overflow-hidden bg-[#f1f5f9]">
                       <img
                         src="/gallery/pranathi_ai_engineer.png"
                         alt="Pranathi - AI Engineer at Codegnan"
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        style={{ objectPosition: "center 28%" }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>

@@ -154,15 +154,15 @@ export function StudentProjectsSection({
         </div>
 
         {/* ═══════════════════════════════════════════════════
-            2X2 STUDENT PROJECT CARDS GRID WITH 3D ILLUSTRATIONS
+            STUDENT PROJECT CARDS GRID (1 Col on Mobile/Tablet, 2 Col on Desktop)
         ═══════════════════════════════════════════════════ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-14">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="rounded-[28px] bg-white border border-[#e2e8f5] overflow-hidden shadow-[0_12px_36px_rgba(20,24,68,0.06)] flex flex-col justify-between hover:border-[#304ffe]/40 transition-all group"
             >
-              <div className="p-7 sm:p-8 flex flex-col justify-between flex-1">
+              <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
                 {/* Top Meta Header */}
                 <div className="flex items-center justify-between gap-2 mb-4">
                   <span
@@ -182,7 +182,7 @@ export function StudentProjectsSection({
                 </div>
 
                 {/* 2-Column Split: Content on Left, 3D Illustration on Right */}
-                <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start justify-between">
+                <div className="flex flex-col sm:flex-row gap-5 lg:gap-6 items-center sm:items-start justify-between">
                   {/* Left Column: Title, Description, Team, Proof & Stack */}
                   <div className="flex-1 min-w-0">
                     <h3 className="text-xl sm:text-2xl font-black text-[#0d1033] mb-2 group-hover:text-[#304ffe] transition-colors leading-snug">
@@ -223,12 +223,12 @@ export function StudentProjectsSection({
                   </div>
 
                   {/* Right Column: 3D Illustration Image */}
-                  <div className="relative w-44 sm:w-48 lg:w-56 h-48 sm:h-56 shrink-0 flex items-center justify-center self-center sm:self-center">
+                  <div className="relative w-40 sm:w-48 lg:w-44 xl:w-56 h-40 sm:h-48 lg:h-44 xl:h-56 shrink-0 flex items-center justify-center self-center sm:self-center">
                     <Image
                       src={project.image || "/gallery/ai_resume.png"}
                       alt={project.title}
                       fill
-                      sizes="(max-width: 640px) 176px, (max-width: 1024px) 192px, 224px"
+                      sizes="(max-width: 640px) 160px, (max-width: 1024px) 192px, 224px"
                       className="object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>

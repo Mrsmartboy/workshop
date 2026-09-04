@@ -5,9 +5,9 @@ export function Footer() {
   return (
     <footer className="bg-white border-t border-[#eaedf5] pt-16 pb-10">
       <div className="max-w-[1200px] mx-auto px-6 sm:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-14 border-b border-[#eaedf5]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-14 border-b border-[#eaedf5]">
           {/* Column 1: Brand Logo + Description + Social Icons */}
-          <div className="md:col-span-4">
+          <div className="sm:col-span-1 lg:col-span-4">
             <a href="/" className="inline-block" aria-label="Codegnan Lab Home">
               <img
                 src="/codegnan_lab.png"
@@ -73,7 +73,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: CAMPUS PROGRAMS */}
-          <div className="md:col-span-2">
+          <div className="sm:col-span-1 lg:col-span-2">
             <h4 className="text-[13px] font-bold uppercase tracking-wider text-[#304ffe] mb-5">
               Experiences
             </h4>
@@ -107,7 +107,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: TECH TRACKS */}
-          <div className="md:col-span-3">
+          <div className="sm:col-span-1 lg:col-span-3">
             <h4 className="text-[13px] font-bold uppercase tracking-wider text-[#304ffe] mb-5">
               Tech Tracks
             </h4>
@@ -141,7 +141,7 @@ export function Footer() {
           </div>
 
           {/* Column 4: CAMPUS DESK */}
-          <div className="md:col-span-3">
+          <div className="sm:col-span-1 lg:col-span-3">
             <h4 className="text-[13px] font-bold uppercase tracking-wider text-[#304ffe] mb-5">
               Campus Partnerships
             </h4>
@@ -163,9 +163,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#606482]">
+        <div className="pt-8 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs text-[#606482] text-center lg:text-left">
           <span>© 2026 Codegnan Labs • A Codegnan Colleges Initiative. All rights reserved.</span>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <Link href="/privacy-policy" className="hover:text-[#304ffe] transition-colors">
               Privacy Policy
             </Link>
