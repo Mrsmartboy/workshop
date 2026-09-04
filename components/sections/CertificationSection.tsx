@@ -139,7 +139,7 @@ export function CertificationSection({
                       850+
                     </strong>
                     <span className="text-[11px] text-[#64748b] mt-1 block">
-                      Hiring Partners
+                      Employer Network
                     </span>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export function CertificationSection({
                       95%
                     </strong>
                     <span className="text-[11px] text-[#64748b] mt-1 block">
-                      Career Success Rate
+                      Reported Career Outcomes
                     </span>
                   </div>
                 </div>
@@ -175,6 +175,9 @@ export function CertificationSection({
                 </div>
               </div>
             </div>
+            <p className="mt-3 w-full max-w-[620px] text-[10px] leading-relaxed text-white/65">
+              * Codegnan-wide figures shown for context. Survey samples, reporting period, and placement methodology are available from the Campus Partnerships Desk; results are not a guarantee for an individual cohort.
+            </p>
           </div>
 
           {/* ═══════════════════════════════════════════════════
@@ -244,7 +247,7 @@ export function CertificationSection({
                   </div>
                 </div>
 
-                {/* Card 3: Direct Access to 850+ Hiring Partners */}
+                {/* Card 3: Employer network */}
                 <div className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-[#e2e8f0] shadow-xs hover:shadow-md transition-shadow">
                   <div className="w-11 h-11 rounded-xl bg-[#f0fdf4] text-[#16a34a] flex items-center justify-center shrink-0 mt-0.5">
                     <Briefcase className="w-5 h-5" />
@@ -252,14 +255,14 @@ export function CertificationSection({
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2">
                       <h4 className="text-[14.5px] font-bold text-[#0d1033]">
-                        Direct Access to 850+ Hiring Partners
+                        Codegnan-wide Employer Network
                       </h4>
                       <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 bg-[#f0fdf4] text-[#16a34a] rounded-full shrink-0">
                         PLACEMENT EDGE
                       </span>
                     </div>
                     <p className="text-[12.5px] text-[#64748b] mt-1 leading-relaxed">
-                      Top performers receive direct interview recommendations for developer and AI engineering roles across Codegnan&apos;s enterprise network.
+                      Top performers may receive interview recommendations through Codegnan&apos;s broader employer network; outcomes vary by cohort and role.
                     </p>
                   </div>
                 </div>

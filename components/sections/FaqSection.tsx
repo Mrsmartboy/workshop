@@ -21,7 +21,11 @@ export function FaqSection({
   triggerToast: (msg: string) => void;
 }) {
   const [activeFaqCategory, setActiveFaqCategory] = useState("All");
-  const [openFaqIds, setOpenFaqIds] = useState<string[]>(["faq-campus-delivery"]);
+  // Keep answers visible on first load so the section is useful without
+  // requiring users to guess that the questions are interactive.
+  const [openFaqIds, setOpenFaqIds] = useState<string[]>(() =>
+    CAMPUS_FAQS.map((faq) => faq.id)
+  );
   const [faqSearchQuery, setFaqSearchQuery] = useState("");
 
   const toggleFaq = (id: string) => {
@@ -125,6 +129,7 @@ export function FaqSection({
                       onClick={() => toggleFaq(faq.id)}
                       className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 focus:outline-none"
                       aria-expanded={isOpen}
+                      aria-controls={`faq-answer-${faq.id}`}
                     >
                       <div className="flex items-center gap-3">
                         <span
@@ -136,7 +141,10 @@ export function FaqSection({
                         >
                           Q
                         </span>
-                        <h3 className="text-[15px] sm:text-[17px] font-extrabold text-[#0d1033] leading-snug">
+                        <h3
+                          id={`faq-question-${faq.id}`}
+                          className="text-[15px] sm:text-[17px] font-extrabold text-[#0d1033] leading-snug"
+                        >
                           {faq.question}
                         </h3>
                       </div>
@@ -153,7 +161,12 @@ export function FaqSection({
                     </button>
 
                     {isOpen && (
-                      <div className="mx-4 mb-4 rounded-[14px] bg-[#f6f4ff] px-5 py-4 text-[13px] text-[#182153] leading-[1.7] animate-in fade-in slide-in-from-top-2">
+                      <div
+                        id={`faq-answer-${faq.id}`}
+                        role="region"
+                        aria-labelledby={`faq-question-${faq.id}`}
+                        className="mx-4 mb-4 rounded-[14px] bg-[#f6f4ff] px-5 py-4 text-[13px] text-[#182153] leading-[1.7] animate-in fade-in slide-in-from-top-2"
+                      >
                         <p>{faq.answer}</p>
                       </div>
                     )}

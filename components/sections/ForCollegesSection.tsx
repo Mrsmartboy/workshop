@@ -292,12 +292,12 @@ export function ForCollegesSection({
         {/* ═══════════════════════════════════════════════════
             BOTTOM CTA BANNER
         ═══════════════════════════════════════════════════ */}
-        <div className="relative z-10 mt-5 rounded-[18px] border border-[#dfe6f5] bg-[#fbfaff] p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1.15fr_1fr_0.95fr_1.2fr] divide-y sm:divide-y-0 sm:divide-x divide-[#e3e7f3]">
+        <div className="relative z-10 mt-5 rounded-[18px] border border-[#dfe6f5] bg-[#fbfaff] p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#e3e7f3]">
           {[
             { icon: Building2, value: "100+", label: "Colleges Partnered", note: "Across India", color: "text-[#6d45d8]" },
             { icon: Users, value: "50,000+", label: "Students Engaged", note: "In Our Programs", color: "text-[#3b82f6]" },
             { icon: Award, value: "200+", label: "Expert Mentors", note: "Industry Professionals", color: "text-[#f97316]" },
-            { icon: TrendingUp, value: "95%", label: "Satisfaction Rate", note: "From Institutions", color: "text-[#4059ec]" },
+            { icon: TrendingUp, value: "95%", label: "Reported Satisfaction", note: "Internal post-program survey", color: "text-[#4059ec]" },
           ].map((metric) => {
             const MetricIcon = metric.icon;
             return (
@@ -311,16 +311,38 @@ export function ForCollegesSection({
               </div>
             );
           })}
-          <div className="flex flex-col justify-center px-4 py-4 sm:py-2">
-            <div className="flex items-center gap-1 text-[#f59e0b]">
-              {Array.from({ length: 5 }).map((_, index) => <Star key={index} className="w-4 h-4 fill-current" />)}
-            </div>
-            <p className="mt-2 text-[10.5px] leading-[1.4] text-[#30416f]">
-              Our college saw amazing participation and real learning outcomes.
-            </p>
-            <span className="mt-1 text-[10px] font-bold text-[#0d1033]">— HOD, CSE Department</span>
-          </div>
         </div>
+        <div className="relative z-10 mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
+          {[
+            {
+              quote: "The on-campus bootcamp gave me a hands-on frontend project and practical experience with APIs and GitHub.",
+              name: "Eshwar Reddy Mandala",
+              context: "Student participant · MLR Institute of Technology",
+            },
+            {
+              quote: "The bootcamp’s hands-on project made the learning process much more practical and engaging.",
+              name: "Poojitha Reddy",
+              context: "Student participant · MLR Institute of Technology",
+            },
+          ].map((testimonial) => (
+            <figure key={testimonial.name} className="rounded-[18px] border border-[#dfe6f5] bg-white p-5 shadow-[0_6px_18px_rgba(48,79,254,0.05)]">
+              <div className="flex items-center gap-1 text-[#f59e0b]" aria-label="5-star feedback">
+                {Array.from({ length: 5 }).map((_, index) => <Star key={index} className="h-4 w-4 fill-current" />)}
+              </div>
+              <blockquote className="mt-3 text-[13px] leading-[1.65] text-[#30416f]">“{testimonial.quote}”</blockquote>
+              <figcaption className="mt-4 flex items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef2ff] text-[11px] font-black text-[#304ffe]" aria-hidden="true">MLR</span>
+                <span>
+                  <strong className="block text-[12px] font-extrabold text-[#0d1033]">{testimonial.name}</strong>
+                  <span className="block text-[11px] text-[#64748b]">{testimonial.context}</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="relative z-10 mt-3 text-[11px] text-[#64748b]">
+          Feedback source: <a href="https://codegnan.com/full-stack-developer-course-in-visakhapatnam/" target="_blank" rel="noreferrer" className="font-semibold text-[#304ffe] hover:underline">Codegnan’s published student reviews</a>. Metrics are Codegnan-wide; survey samples and placement methodology are available from the Campus Partnerships Desk.
+        </p>
       </div>
     </section>
   );

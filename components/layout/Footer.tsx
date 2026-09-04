@@ -22,7 +22,9 @@ export function Footer() {
             <div className="mt-6 flex items-center gap-4">
               {/* Facebook */}
               <a
-                href="#"
+                href="https://www.facebook.com/codegnan/"
+                target="_blank"
+                rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-[#dfe2ea] flex items-center justify-center text-[#606482] hover:text-[#304ffe] hover:border-[#304ffe] transition-colors"
                 aria-label="Facebook"
               >
@@ -32,7 +34,9 @@ export function Footer() {
               </a>
               {/* Twitter / X */}
               <a
-                href="#"
+                href="https://x.com/codegnan"
+                target="_blank"
+                rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-[#dfe2ea] flex items-center justify-center text-[#606482] hover:text-[#304ffe] hover:border-[#304ffe] transition-colors"
                 aria-label="Twitter"
               >
@@ -42,7 +46,9 @@ export function Footer() {
               </a>
               {/* Instagram */}
               <a
-                href="#"
+                href="https://www.instagram.com/codegnan/"
+                target="_blank"
+                rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-[#dfe2ea] flex items-center justify-center text-[#606482] hover:text-[#304ffe] hover:border-[#304ffe] transition-colors"
                 aria-label="Instagram"
               >
@@ -52,7 +58,9 @@ export function Footer() {
               </a>
               {/* LinkedIn */}
               <a
-                href="#"
+                href="https://www.linkedin.com/company/codegnan/"
+                target="_blank"
+                rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-[#dfe2ea] flex items-center justify-center text-[#606482] hover:text-[#304ffe] hover:border-[#304ffe] transition-colors"
                 aria-label="LinkedIn"
               >
@@ -152,10 +160,10 @@ export function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#606482]">
           <span>© 2026 Codegnan Labs • A Codegnan Colleges Initiative. All rights reserved.</span>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-[#304ffe] transition-colors">
+            <a href="https://codegnan.com/privacy-policy/" className="hover:text-[#304ffe] transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-[#304ffe] transition-colors">
+            <a href="https://codegnan.com/terms-conditions/" className="hover:text-[#304ffe] transition-colors">
               Terms of Service
             </a>
             <a href="#campus-enquiry" className="text-[#304ffe] font-bold hover:underline">

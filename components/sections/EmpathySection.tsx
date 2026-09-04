@@ -86,151 +86,53 @@ export function EmpathySection() {
           </p>
         </div>
 
-        {/* Diamond Infographic Container */}
-        {/* Desktop / Tablet View (3 on Top, 2 on Bottom Staggered) */}
-        <div className="hidden md:flex flex-col items-center">
-          {/* Top Row: Diamonds 1, 2, 3 */}
-          <div className="flex items-center justify-center gap-4 lg:gap-8">
-            {steps.slice(0, 3).map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.stepNumber}
-                  className="relative group my-10 flex h-[250px] w-[250px] items-center justify-center lg:h-[280px] lg:w-[280px]"
-                >
-                  {/* Big Number floating on left */}
-                  <div
-                    className={`pointer-events-none absolute -left-5 top-1/2 z-20 -translate-y-1/2 select-none text-[58px] font-black drop-shadow-[0_4px_10px_rgba(0,0,0,0.12)] transition-transform group-hover:scale-110 lg:-left-7 lg:text-[76px] ${item.numberColor}`}
-                  >
-                    {item.stepNumber}
-                  </div>
-
-                  {/* Rotated Diamond Card Shape */}
-                  <div
-                    className={`absolute inset-0 flex rotate-45 items-center justify-center overflow-hidden rounded-[34px] border-[3px] bg-white shadow-[0_14px_35px_rgba(20,24,68,0.08)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_20px_45px_rgba(20,24,68,0.14)] lg:rounded-[42px] ${item.borderColor}`}
-                    style={{
-                      boxShadow: `0 14px 35px ${item.glowColor}`,
-                    }}
-                  >
-                    {/* Inner subtle glow ring */}
-                    <div className="absolute inset-1.5 rounded-[26px] lg:rounded-[32px] border border-gray-100 pointer-events-none" />
-                  </div>
-
-                  {/* Un-rotated Content Inside */}
-                  <div className="pointer-events-none relative z-10 flex h-[78%] w-[78%] flex-col items-center justify-center px-2 text-center">
-                    <div
-                      className={`mb-2 flex h-11 w-11 items-center justify-center rounded-full shadow-sm transition-transform group-hover:scale-110 lg:h-14 lg:w-14 ${item.iconBg}`}
-                    >
-                      <Icon className="h-7 w-7" />
-                    </div>
-
-                    <h3 className="text-[20px] font-extrabold leading-tight text-[#0d1033] lg:text-[24px]">
-                      {item.title}
-                    </h3>
-
-                    <div className="mx-auto mt-2 h-0.5 w-10 rounded-full opacity-80" style={{ backgroundColor: item.color }} />
-                    <p className="mt-3 text-[12px] leading-[1.45] text-[#606482] lg:text-[14px]">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Bottom Row: Diamonds 4, 5 (Centered & Staggered Between 1-2 and 2-3) */}
-          <div className="-mt-10 flex items-center justify-center gap-4 lg:-mt-12 lg:gap-8">
-            {steps.slice(3, 5).map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.stepNumber}
-                  className="relative group my-10 flex h-[250px] w-[250px] items-center justify-center lg:h-[280px] lg:w-[280px]"
-                >
-                  {/* Big Number floating on left */}
-                  <div
-                    className={`pointer-events-none absolute -left-5 top-1/2 z-20 -translate-y-1/2 select-none text-[58px] font-black drop-shadow-[0_4px_10px_rgba(0,0,0,0.12)] transition-transform group-hover:scale-110 lg:-left-7 lg:text-[76px] ${item.numberColor}`}
-                  >
-                    {item.stepNumber}
-                  </div>
-
-                  {/* Rotated Diamond Card Shape */}
-                  <div
-                    className={`absolute inset-0 flex rotate-45 items-center justify-center overflow-hidden rounded-[34px] border-[3px] bg-white shadow-[0_14px_35px_rgba(20,24,68,0.08)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_20px_45px_rgba(20,24,68,0.14)] lg:rounded-[42px] ${item.borderColor}`}
-                    style={{
-                      boxShadow: `0 14px 35px ${item.glowColor}`,
-                    }}
-                  >
-                    <div className="absolute inset-1.5 rounded-[26px] lg:rounded-[32px] border border-gray-100 pointer-events-none" />
-                  </div>
-
-                  {/* Un-rotated Content Inside */}
-                  <div className="pointer-events-none relative z-10 flex h-[78%] w-[78%] flex-col items-center justify-center px-2 text-center">
-                    <div
-                      className={`mb-2 flex h-11 w-11 items-center justify-center rounded-full shadow-sm transition-transform group-hover:scale-110 lg:h-14 lg:w-14 ${item.iconBg}`}
-                    >
-                      <Icon className="h-7 w-7" />
-                    </div>
-
-                    <h3 className="text-[20px] font-extrabold leading-tight text-[#0d1033] lg:text-[24px]">
-                      {item.title}
-                    </h3>
-
-                    <div className="mx-auto mt-2 h-0.5 w-10 rounded-full opacity-80" style={{ backgroundColor: item.color }} />
-                    <p className="mt-3 text-[12px] leading-[1.45] text-[#606482] lg:text-[14px]">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Mobile View: Clean Centered Stacked Diamonds with generous spacing */}
-        <div className="md:hidden flex flex-col items-center space-y-16 py-6">
+        {/* One responsive list keeps the framework content accessible and avoids
+            rendering a second desktop/mobile copy into the document. */}
+        <ol className="grid grid-cols-1 gap-14 py-6 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-16 lg:grid-cols-5 lg:gap-6 lg:py-10">
           {steps.map((item) => {
             const Icon = item.icon;
             return (
-              <div
+              <li
                 key={item.stepNumber}
-                className="relative group w-[220px] h-[220px] flex items-center justify-center"
+                className="group relative mx-auto flex h-[230px] w-[230px] items-center justify-center lg:h-[250px] lg:w-[250px]"
               >
-                {/* Big Number floating on left */}
+                {/* Big number floating beside the single responsive card */}
                 <div
-                  className={`absolute -left-6 top-1/2 -translate-y-1/2 z-20 ${item.numberColor} text-[52px] font-black select-none pointer-events-none drop-shadow-md`}
+                  className={`pointer-events-none absolute -left-7 top-1/2 z-20 -translate-y-1/2 select-none text-[58px] font-black drop-shadow-md transition-transform group-hover:scale-110 lg:-left-8 lg:text-[72px] ${item.numberColor}`}
                 >
                   {item.stepNumber}
                 </div>
 
-                {/* Rotated Diamond Card Shape */}
+                {/* The same diamond card is used at every breakpoint. */}
                 <div
-                  className={`absolute inset-0 bg-white rounded-[30px] border-[3px] ${item.borderColor} rotate-45 shadow-[0_12px_30px_rgba(20,24,68,0.08)] flex items-center justify-center overflow-hidden`}
+                  className={`absolute inset-0 rotate-45 rounded-[34px] border-[3px] bg-white shadow-[0_12px_30px_rgba(20,24,68,0.08)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_20px_45px_rgba(20,24,68,0.14)] lg:rounded-[40px] ${item.borderColor}`}
                   style={{
                     boxShadow: `0 12px 30px ${item.glowColor}`,
                   }}
-                />
+                >
+                  <div className="pointer-events-none absolute inset-1.5 rounded-[26px] border border-gray-100 lg:rounded-[32px]" />
+                </div>
 
-                {/* Un-rotated Content Inside */}
-                <div className="relative z-10 w-[80%] h-[80%] flex flex-col items-center justify-center text-center px-2 pointer-events-none">
+                <div className="pointer-events-none relative z-10 flex h-[78%] w-[78%] flex-col items-center justify-center px-2 text-center">
                   <div
-                    className={`w-9 h-9 rounded-xl ${item.iconBg} flex items-center justify-center mb-1 shadow-sm`}
+                    className={`mb-2 flex h-11 w-11 items-center justify-center rounded-full shadow-sm transition-transform group-hover:scale-110 lg:h-14 lg:w-14 ${item.iconBg}`}
                   >
-                    <Icon className="w-4 h-4" />
+                    <Icon className="h-6 w-6 lg:h-7 lg:w-7" />
                   </div>
 
-                  <h3 className="text-[15px] font-extrabold text-[#0d1033] leading-tight">
+                  <h3 className="text-[18px] font-extrabold leading-tight text-[#0d1033] lg:text-[22px]">
                     {item.title}
                   </h3>
 
-                  <p className="text-[10.5px] text-[#606482] leading-[1.35] mt-1 line-clamp-3">
+                  <div className="mx-auto mt-2 h-0.5 w-10 rounded-full opacity-80" style={{ backgroundColor: item.color }} />
+                  <p className="mt-3 text-[11px] leading-[1.4] text-[#606482] lg:text-[13px]">
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ol>
       </div>
     </section>
   );

@@ -14,11 +14,11 @@ export function CampusEnquirySection({
     collegeName: "",
     city: "",
     contactPerson: "",
-    designation: "HOD / Department Head",
+    designation: "",
     phone: "",
     email: "",
     expectedStudentCount: "100 - 250 Students",
-    programInterest: "Tech Workshop (2-6 Hours)",
+    programInterest: "",
     preferredDuration: "",
     preferredDate: "",
     notes: "",
@@ -127,11 +127,11 @@ export function CampusEnquirySection({
                         collegeName: "",
                         city: "",
                         contactPerson: "",
-                        designation: "HOD / Department Head",
+                        designation: "",
                         phone: "",
                         email: "",
                         expectedStudentCount: "100 - 250 Students",
-                        programInterest: "Tech Workshop (2-6 Hours)",
+                        programInterest: "",
                         preferredDuration: "",
                         preferredDate: "",
                         notes: "",
@@ -220,11 +220,12 @@ export function CampusEnquirySection({
                         onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
                         className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       >
-                        <option>Principal / Dean</option>
-                        <option>HOD / Department Head</option>
-                        <option>Training &amp; Placement Officer (TPO)</option>
-                        <option>Faculty Coordinator</option>
-                        <option>Student Club Lead / President</option>
+                        <option value="" disabled>Select your designation</option>
+                        <option value="Principal / Dean">Principal / Dean</option>
+                        <option value="HOD / Department Head">HOD / Department Head</option>
+                        <option value="Training &amp; Placement Officer (TPO)">Training &amp; Placement Officer (TPO)</option>
+                        <option value="Faculty Coordinator">Faculty Coordinator</option>
+                        <option value="Student Club Lead / President">Student Club Lead / President</option>
                       </select>
                     </div>
 
@@ -255,11 +256,12 @@ export function CampusEnquirySection({
                         required
                         className="h-[49px] w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#697390] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       >
-                        <option>Tech Workshop (2-6 Hours)</option>
-                        <option>Intensive Bootcamp (1-5 Days)</option>
-                        <option>Campus Hackathon (24-48 Hours)</option>
-                        <option>College Tech Fest Partner</option>
-                        <option>Multiple / Customized Tracks</option>
+                        <option value="" disabled>Select a program type</option>
+                        <option value="Tech Workshop (2-6 Hours)">Tech Workshop (2-6 Hours)</option>
+                        <option value="Intensive Bootcamp (1-5 Days)">Intensive Bootcamp (1-5 Days)</option>
+                        <option value="Campus Hackathon (24-48 Hours)">Campus Hackathon (24-48 Hours)</option>
+                        <option value="College Tech Fest Partner">College Tech Fest Partner</option>
+                        <option value="Multiple / Customized Tracks">Multiple / Customized Tracks</option>
                       </select>
                     </div>
 
