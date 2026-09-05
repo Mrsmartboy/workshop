@@ -85,8 +85,6 @@ export function Navbar({
     { label: "For Colleges (B2B Blueprint)", href: "/labs/colleges" },
     { label: "Mentors & Leaders", href: "/#mentors" },
     { label: "Campus FAQs", href: "/#faq" },
-    { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Terms of Service", href: "/terms-of-service" },
   ];
 
   const handleLinkClick = (sectionId: string, e: React.MouseEvent) => {
@@ -336,20 +334,6 @@ export function Navbar({
               className="block text-xs font-semibold text-[#475569] hover:text-[#304ffe]"
             >
               • Student Projects Showcase
-            </Link>
-            <Link
-              href="/privacy-policy"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-xs font-semibold text-[#475569] hover:text-[#304ffe]"
-            >
-              • Privacy Policy
-            </Link>
-            <Link
-              href="/terms-of-service"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-xs font-semibold text-[#475569] hover:text-[#304ffe]"
-            >
-              • Terms of Service
             </Link>
           </div>
 
