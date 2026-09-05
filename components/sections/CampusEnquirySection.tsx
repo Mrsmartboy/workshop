@@ -51,6 +51,29 @@ export function CampusEnquirySection({
     }
   }, [recommenderDetails]);
 
+  const resetForm = () => {
+    setFormData({
+      collegeName: "",
+      city: "",
+      contactPerson: "",
+      designation: "",
+      phone: "",
+      email: "",
+      expectedStudentCount: "",
+      programInterest: "",
+      preferredDuration: "",
+      preferredDate: "",
+      notes: "",
+    });
+    setSubmitted(false);
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Only allow numbers and limit to 10 digits
+    const cleaned = e.target.value.replace(/\D/g, "").slice(0, 10);
+    setFormData((prev) => ({ ...prev, phone: cleaned }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (
@@ -67,6 +90,11 @@ export function CampusEnquirySection({
       return;
     }
 
+    if (formData.phone.replace(/\D/g, "").length !== 10) {
+      triggerToast("Please enter a valid 10-digit phone number.");
+      return;
+    }
+
     setSubmitting(true);
     
     try {
@@ -79,16 +107,17 @@ export function CampusEnquirySection({
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send enquiry');
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'Failed to send enquiry');
       }
 
       setSubmitting(false);
       setSubmitted(true);
       triggerToast("Campus enquiry submitted! Our academic coordinator will contact you within 24 hours.");
-    } catch (error) {
-      console.error('EmailJS Error:', error);
+    } catch (error: any) {
+      console.error('Campus enquiry error:', error);
       setSubmitting(false);
-      triggerToast("Failed to send enquiry. Please try again later.");
+      triggerToast(error?.message || "Failed to send enquiry. Please try again later.");
     }
   };
 
@@ -194,8 +223,8 @@ export function CampusEnquirySection({
                   </p>
                   <button
                     type="button"
-                    onClick={() => setSubmitted(false)}
-                    className="px-6 py-2.5 bg-[#304ffe] text-white text-xs font-bold rounded-lg uppercase tracking-wider"
+                    onClick={resetForm}
+                    className="px-6 py-2.5 bg-[#304ffe] hover:bg-[#253bdf] text-white text-xs font-bold rounded-lg uppercase tracking-wider transition-colors"
                   >
                     Submit Another Request
                   </button>
@@ -288,14 +317,17 @@ export function CampusEnquirySection({
 
                     <div>
                       <label className="block text-[13px] font-bold text-[#0d1033] mb-1.5">
-                        Phone Number *
+                        Phone Number (10 Digits) *
                       </label>
                       <input
                         type="tel"
                         required
+                        inputMode="numeric"
+                        pattern="[0-9]{10}"
+                        maxLength={10}
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        onChange={handlePhoneChange}
+                        placeholder="e.g. 9876543210"
                         className="w-full px-4 py-3 bg-white border border-[#dce3ec] rounded-[10px] text-sm text-[#0d1033] placeholder:text-[#8892b0] focus:outline-none focus:border-[#304ffe] focus:ring-2 focus:ring-[#304ffe]/10 transition-all"
                       />
                     </div>
