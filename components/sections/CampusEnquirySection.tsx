@@ -51,7 +51,7 @@ export function CampusEnquirySection({
     }
   }, [recommenderDetails]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (
       !formData.collegeName ||
@@ -68,11 +68,28 @@ export function CampusEnquirySection({
     }
 
     setSubmitting(true);
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send enquiry');
+      }
+
       setSubmitting(false);
       setSubmitted(true);
       triggerToast("Campus enquiry submitted! Our academic coordinator will contact you within 24 hours.");
-    }, 900);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitting(false);
+      triggerToast("Failed to send enquiry. Please try again later.");
+    }
   };
 
   const shareViaWhatsApp = () => {
